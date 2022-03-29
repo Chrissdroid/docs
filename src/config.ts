@@ -148,6 +148,7 @@ export const SIDEBAR = {
 	fr: [
 		{ text: 'Commencez ici', header: true, type: 'learn' },
 		{ text: 'Bien Démarrer', link: 'fr/getting-started' },
+		{ text: 'Installation', link: 'fr/install' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
