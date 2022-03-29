@@ -31,7 +31,24 @@ export const translations = checkLanguages({
 	'zh-CN': {},
 	'zh-TW': {},
 	bg: {},
-	fr: {},
+	fr: {
+		// Left Sidebar tab headings
+		'leftSidebar.learnTab': 'Apprendre',
+		'leftSidebar.referenceTab': 'Référence',
+		// Right Sidebar
+		'rightSidebar.onThisPage': 'Sur cette page',
+		'rightSidebar.overview': 'Vue générale',
+		'rightSidebar.more': 'Plus',
+		'rightSidebar.editPage': 'Modifier cette page',
+		'rightSidebar.translatePage': 'Traduire cette page',
+		'rightSidebar.joinCommunity': 'Rejoindre notre communauté',
+		// Used in previous/next page links at the bottom of pages
+		'articleNav.nextPage': 'Page suivante',
+		'articleNav.prevPage': 'Page précédente',
+		// Used in `<Since>`: Added in: v0.24.0 [NEW]
+		'since.addedIn': 'Ajouté le :',
+		'since.new': 'Nouveau',
+	},
 	bn: {},
 	kr: {},
 	ar: {},
