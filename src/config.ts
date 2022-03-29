@@ -33,7 +33,7 @@ export const SIDEBAR = {
 		{ text: 'Integrations', link: 'en/guides/integrations-guide' },
 		{ text: 'RSS', link: 'en/guides/rss' },
 		{ text: 'UI Frameworks', link: 'en/core-concepts/framework-components' },
-		
+
 		{ text: 'Reference', header: true, type: 'api' },
 		{
 			text: 'Configuration',
@@ -147,10 +147,8 @@ export const SIDEBAR = {
 		{ text: 'Започваме!', link: 'bg/getting-started' },
 	],
 	fr: [
-		{ text: 'Bienvenue', header: true, type: 'learn' },
-		{ text: 'Bien démarrer', link: 'fr/getting-started' },
-		{ text: 'Démarrage rapide', link: 'fr/quick-start' },
-		{ text: 'Installation', link: 'fr/installation' },
+		{ text: 'Commencez ici', header: true, type: 'learn' },
+		{ text: 'Bien Démarrer', link: 'fr/getting-started' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
