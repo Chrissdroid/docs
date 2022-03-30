@@ -149,6 +149,7 @@ export const SIDEBAR = {
 		{ text: 'Commencez ici', header: true, type: 'learn' },
 		{ text: 'Bien Démarrer', link: 'fr/getting-started' },
 		{ text: 'Installation', link: 'fr/install' },
+		{ text: 'Construit avec Astro', link: `fr/integrations/integrations` },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
