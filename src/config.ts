@@ -152,6 +152,7 @@ export const SIDEBAR = {
 		{ text: 'Configuration de l\'éditeur de code', link: 'fr/editor-setup' },
 		{ text: 'Guide de Migration', link: 'fr/migrate' },
 		{ text: 'Construit avec Astro', link: `fr/integrations/integrations` },
+		{ text: 'Astro vs. X', link: 'fr/comparing-astro-vs-other-tools' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
