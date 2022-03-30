@@ -159,6 +159,7 @@ export const SIDEBAR = {
 
 		{ text: 'Les Bases', header: true, type: 'learn' },
 		{ text: 'Structure du Projet', link: 'fr/core-concepts/project-structure' },
+		{ text: 'Composants', link: 'fr/core-concepts/astro-components' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
