@@ -153,6 +153,12 @@ export const SIDEBAR = {
 		{ text: 'Guide de Migration', link: 'fr/migrate' },
 		{ text: 'Construit avec Astro', link: `fr/integrations/integrations` },
 		{ text: 'Astro vs. X', link: 'fr/comparing-astro-vs-other-tools' },
+
+		{ text: 'Concepts Principaux', header: true, type: 'learn' },
+		{ text: 'Hydratation Partielle', link: 'fr/core-concepts/partial-hydration' },
+
+		{ text: 'Les Bases', header: true, type: 'learn' },
+		{ text: 'Structure du Projet', link: 'fr/core-concepts/project-structure' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
