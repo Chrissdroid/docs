@@ -148,8 +148,6 @@ const items = ["Chien", "Chat", "Ornithorynque"];
 
 Souvenez vous : un composant Astro peut rendre plusieurs éléments sans avoir à les entourer d'une balise `<div>` ou `<>`.
 
-However, when using an Astro JSX-like expression to dynamically create elements, you must wrap these multiple elements inside of a **Fragment** just like you would in JavaScript or JSX. Astro supports using either `<Fragment> </Fragment>` or `<> </>`.
-
 Attention, quand vous utilisez une expression JSX pour créer plusieurs éléments dynamiques, vous devez entourer ces éléments à l'intérieur d'un **Fragment** comme vous le feriez dans du JavaScript ou du JSX. Astro supporte l'utilisation de `<Fragment> </Fragment>` ou des `<> </>`.
 
 ```astro
@@ -277,7 +275,6 @@ const { name } = Astro.props
 
 #### Contenu de remplacement pour les emplacements
 
-Slots can also render **fallback content**. When there are no matching children passed to a `<slot>`, a `<slot>` element will render its own placeholder children.
 Les emplacements peuvent aussi afficher des **contenus de remplacement**. Quand il n'y a pas d'enfants correspondants passés à un `<slot>`, un élément `<slot>` affichera ses propres enfants.
 
 ```astro
