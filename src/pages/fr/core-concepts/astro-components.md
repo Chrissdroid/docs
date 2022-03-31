@@ -190,7 +190,7 @@ export interface Props {
   greeting?: string;
 }
 
-const { greeting = "Salut", name } = Astro.props
+const { greeting = "Salut", name } = Astro.props as Props;
 ---
 <h2>{greeting}, {name} !</h2>
 ```
