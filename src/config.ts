@@ -168,6 +168,7 @@ export const SIDEBAR = {
 		{ text: 'Configurer Astro', link: 'fr/guides/configuring-astro' },
 		{ text: 'CSS et Stylisation', link: 'fr/guides/styling' },
 		{ text: 'Déboguer', link: 'fr/guides/debugging' },
+		{ text: 'Récupération de Données', link: 'fr/guides/data-fetching' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
