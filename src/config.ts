@@ -183,7 +183,7 @@ export const SIDEBAR = {
 			link: 'fr/reference/configuration-reference',
 		},
 		{ text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
-		{ text: '[WIP] Lignes de Commandes', link: 'fr/reference/cli-reference' },
+		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 		{ text: '[WIP] API d\'Intégration', link: 'fr/reference/integrations-reference' },
 		{ text: '[WIP] Règles de Routage', link: 'fr/core-concepts/routing' },
