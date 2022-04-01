@@ -46,7 +46,7 @@ export const translations = checkLanguages({
 		'articleNav.nextPage': 'Page suivante',
 		'articleNav.prevPage': 'Page précédente',
 		// Used in `<Since>`: Added in: v0.24.0 [NEW]
-		'since.addedIn': 'Ajouté le :',
+		'since.addedIn': 'Ajouté à la version :',
 		'since.new': 'Nouveau',
 	},
 	bn: {},
