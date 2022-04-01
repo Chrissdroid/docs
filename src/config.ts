@@ -166,6 +166,7 @@ export const SIDEBAR = {
 
 		{ text: 'Fonctionnalités', header: true, type: 'learn' },
 		{ text: 'Configurer Astro', link: 'fr/guides/configuring-astro' },
+		{ text: 'CSS et Stylisation', link: 'fr/guides/styling' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
