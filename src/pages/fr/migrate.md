@@ -29,7 +29,7 @@ Read our [step-by-step walkthrough](/en/guides/integrations-guide) to learn how 
 
 The new integration system replaces the previous `renderers` system, including the published `@astrojs/renderer-*` packages on npm. Going forward, `@astrojs/renderer-react` becomes `@astrojs/react`, `@astrojs/renderer-vue` becomes `@astrojs/vue`, and so on.
 
-**To migrate:** update Astro to `v0.25.0` and then run `astro dev` or `astro build` with your old configuration file containing the outdated `"renderers"` config. You will immediately see a notice telling you the exact changes you need to make to your `astro.config.js` file, based on your current config. You can also update your packages yourself, using the table below.
+**To migrate:** update Astro to `v0.25.0` and then run `astro dev` or `astro build` with your old configuration file containing the outdated `"renderers"` config. You will immediately see a notice telling you the exact changes you need to make to your `astro.config.mjs` file, based on your current config. You can also update your packages yourself, using the table below.
 
 For a deeper walkthrough, read our [step-by-step guide](/en/guides/integrations-guide) to learn how to replace existing renderers with a new Astro framework integration.
 
