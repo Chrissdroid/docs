@@ -103,24 +103,6 @@ const url = new URL(Astro.request.url);
 
 L'[URL canonique][canonical] de la page actuelle. Si l'option `site` est définie, l'origine du site sera l'origine de cette URL.
 
-### `Astro.resolve()`
-
-> ⚠️ Cette fonctionnalité est en cours de **dépréciation**. Veuillez lire le [guide de migration](/fr/migrate#deprecated-astroresolve) pour mettre à jour vos références d'assets à une option future-proof.
-
-`Astro.resolve()` aide à la création d'URLs relatives au fichier Astro courant, permettant de référencer des fichiers dans votre dossier `src/`.
-
-Astro ne résout pas les liens relatifs dans l'HTML, comme les images :
-
-```html
-<img src="../images/penguin.png" />
-```
-
-Le code ci-dessus sera envoyé au navigateur tel quel et le navigateur résoudra le lien relatif à la page actuelle. Si vous voulez qu'il soit résolu relativement au fichier .astro où vous travaillez, utilisez `Astro.resolve` :
-
-```astro
-<img src={Astro.resolve('../images/penguin.png')} />
-```
-
 ### `Astro.site`
 
 `Astro.site` retourne une `URL` créée à partir de `buildOptions.site` dans votre configuration Astro. Si égal à `undefined`, il retournera une URL générée à partir de `localhost`.
@@ -135,7 +117,6 @@ const path = Astro.site.pathname;
 
 ### `Astro.slots`
 
-`Astro.slots` contains utility functions for modifying an Astro component's slotted children.
 `Astro.slots` contient des fonctions d'aide pour modifier les enfants slottés d'un composant Astro.
 
 | Nom            | Type                                              | Description                                        |
