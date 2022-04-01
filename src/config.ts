@@ -170,6 +170,7 @@ export const SIDEBAR = {
 		{ text: 'Déboguer', link: 'fr/guides/debugging' },
 		{ text: 'Récupération de Données', link: 'fr/guides/data-fetching' },
 		{ text: 'Variables d\'Environnement', link: 'fr/guides/environment-variables' },
+		{ text: 'Alias d\'Importation', link: 'fr/guides/aliases' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
