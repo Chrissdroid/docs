@@ -169,6 +169,7 @@ export const SIDEBAR = {
 		{ text: 'CSS et Stylisation', link: 'fr/guides/styling' },
 		{ text: 'Déboguer', link: 'fr/guides/debugging' },
 		{ text: 'Récupération de Données', link: 'fr/guides/data-fetching' },
+		{ text: 'Variables d\'Environnement', link: 'fr/guides/environment-variables' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
