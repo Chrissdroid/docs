@@ -174,6 +174,9 @@ export const SIDEBAR = {
 		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
 		{ text: 'Flux RSS', link: 'fr/guides/rss' },
 		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
+
+		{ text: 'Références', header: true, type: 'api' },
+		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
