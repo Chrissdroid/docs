@@ -171,6 +171,9 @@ export const SIDEBAR = {
 		{ text: 'Récupération de Données', link: 'fr/guides/data-fetching' },
 		{ text: 'Variables d\'Environnement', link: 'fr/guides/environment-variables' },
 		{ text: 'Alias d\'Importation', link: 'fr/guides/aliases' },
+		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
+		{ text: 'Flux RSS', link: 'fr/guides/rss' },
+		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
