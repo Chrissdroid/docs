@@ -150,9 +150,9 @@ export const SIDEBAR = {
 		{ text: 'Bien Démarrer', link: 'fr/getting-started' },
 		{ text: 'Installation', link: 'fr/install' },
 		{ text: 'Configuration de l\'éditeur de code', link: 'fr/editor-setup' },
-		{ text: 'Guide de Migration', link: 'fr/migrate' },
+		{ text: '[WIP] Guide de Migration', link: 'fr/migrate' },
 		{ text: 'Construit avec Astro', link: `fr/integrations/integrations` },
-		{ text: 'Astro vs. X', link: 'fr/comparing-astro-vs-other-tools' },
+		{ text: '[WIP] Astro vs. X', link: 'fr/comparing-astro-vs-other-tools' },
 
 		{ text: 'Concepts Principaux', header: true, type: 'learn' },
 		{ text: 'Hydratation Partielle', link: 'fr/core-concepts/partial-hydration' },
