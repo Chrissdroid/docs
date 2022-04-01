@@ -163,6 +163,9 @@ export const SIDEBAR = {
 		{ text: 'Pages', link: 'fr/core-concepts/astro-pages' },
 		{ text: 'Layouts', link: 'fr/core-concepts/layouts' },
 		{ text: 'Fichiers Statiques', link: 'fr/guides/imports' },
+
+		{ text: 'Fonctionnalités', header: true, type: 'learn' },
+		{ text: 'Configurer Astro', link: 'fr/guides/configuring-astro' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
