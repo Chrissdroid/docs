@@ -185,7 +185,7 @@ export const SIDEBAR = {
 		{ text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
 		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
-		{ text: '[WIP] API d\'Intégration', link: 'fr/reference/integrations-reference' },
+		{ text: 'API d\'Intégration', link: 'fr/reference/integrations-reference' },
 		{ text: '[WIP] Règles de Routage', link: 'fr/core-concepts/routing' },
 		{ text: '[WIP] Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
 	],
