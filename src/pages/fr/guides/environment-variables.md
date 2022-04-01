@@ -19,8 +19,6 @@ PUBLIC_ANYBODY=juste là
 
 Dans cet exemple, `PUBLIC_ANYBODY` sera disponible en tant que `import.meta.env.PUBLIC_ANYBODY` dans le code coté serveur ou client, alors que `SECRET_PASSWORD` ne sera pas.
 
-> Dans les versions précédentes, ces variables étaient préfixées par `SNOWPACK_PUBLIC_` et nécessitaient le plugin `@snowpack/plugin-env`.
-
 ## Définir des variables d'environnement
 
 Dans Astro les versions 0.21 et supérieures, les variables d'environnement peuvent être chargées depuis les fichiers `.env` dans le répertoire de votre projet.
@@ -46,7 +44,9 @@ PUBLIC_POKEAPI="https://pokeapi.co/api/v2"
 
 ## Obtenir des variables d'environnement
 
-Au lieu d'utiliser `process.env`, avec Vite, vous utilisez `import.meta.env`, qui utilise la fonctionnalité `import.meta` ajoutée dans ES2020 (vous ne devriez pas vous inquiéter de la compatibilité avec les navigateurs, Vite remplace toutes les mentions `import.meta.env` par des valeurs statiques). Par exemple, pour obtenir la variable d'environnement `PUBLIC_POKEAPI`, vous pouvez utiliser `import.meta.env.PUBLIC_POKEAPI`.
+> Dans cette section, nous utilisons `[dot]` pour dire `.`. Cela est dû à une erreur dans notre moteur de compilation qui remplace `import[dot]meta[dot]env` si nous utilisons `.` au lieu de `[dot]`.
+
+Au lieu d'utiliser `process.env`, avec Vite, vous utilisez `import[dot]meta[dot]env`, qui utilise la fonctionnalité `import.meta` ajoutée dans ES2020 (vous ne devriez pas vous inquiéter de la compatibilité avec les navigateurs, Vite remplace toutes les mentions `import[dot]meta[dot]env` par des valeurs statiques). Par exemple, pour obtenir la variable d'environnement `PUBLIC_POKEAPI`, vous pouvez utiliser `import.meta.env.PUBLIC_POKEAPI`.
 
 ```js
 // Quand import.meta.env.SSR === true
@@ -57,11 +57,11 @@ const data = fetch(`${import.meta.env.PUBLIC_POKEAPI}/pokemon/squirtle`);
 ```
 
 > ⚠️ATTENTION⚠️:
-> Parce que Vite remplace statiquement `import.meta.env`, vous ne pouvez pas l'accéder avec des clés dynamiques comme `import.meta.env[key]`.
+> Parce que Vite remplace statiquement `import[dot]meta[dot]env`, vous ne pouvez pas l'accéder avec des clés dynamiques comme `import.meta.env[key]`.
 
 ## Autocomplétion pour TypeScript
 
-Par défaut, Vite fournit des définitions de type pour `import.meta.env` dans `vite/client.d.ts`. Vous pouvez aussi définir d'autres variables d'environnement dans les fichiers `.env.[mode]`, mais vous voulez surement obtenir l'autocomplétion pour les variables d'environnement définies par l'utilisateur qui préfixent `PUBLIC_`.
+Par défaut, Vite fournit des définitions de type pour `import[dot]meta[dot]env` dans `vite/client.d.ts`. Vous pouvez aussi définir d'autres variables d'environnement dans les fichiers `.env.[mode]`, mais vous voulez surement obtenir l'autocomplétion pour les variables d'environnement définies par l'utilisateur qui préfixent `PUBLIC_`.
 
 Pour faire cela, vous pouvez créer un fichier `env.d.ts` dans le répertoire `src`, puis étendre `ImportMetaEnv` comme ceci :
 
