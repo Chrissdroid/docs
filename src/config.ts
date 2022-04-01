@@ -162,6 +162,7 @@ export const SIDEBAR = {
 		{ text: 'Composants', link: 'fr/core-concepts/astro-components' },
 		{ text: 'Pages', link: 'fr/core-concepts/astro-pages' },
 		{ text: 'Layouts', link: 'fr/core-concepts/layouts' },
+		{ text: '[WIP] Markdown', link: 'fr/guides/markdown-content' },
 		{ text: 'Fichiers Statiques', link: 'fr/guides/imports' },
 
 		{ text: 'Fonctionnalités', header: true, type: 'learn' },
@@ -169,6 +170,7 @@ export const SIDEBAR = {
 		{ text: 'CSS et Stylisation', link: 'fr/guides/styling' },
 		{ text: 'Déboguer', link: 'fr/guides/debugging' },
 		{ text: 'Récupération de Données', link: 'fr/guides/data-fetching' },
+		{ text: '[WIP] Déployer', link: 'fr/guides/deploy' },
 		{ text: 'Variables d\'Environnement', link: 'fr/guides/environment-variables' },
 		{ text: 'Alias d\'Importation', link: 'fr/guides/aliases' },
 		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
@@ -176,7 +178,16 @@ export const SIDEBAR = {
 		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
 
 		{ text: 'Références', header: true, type: 'api' },
+		{
+			text: '[WIP] Configuration',
+			link: 'fr/reference/configuration-reference',
+		},
+		{ text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
+		{ text: '[WIP] Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
+		{ text: '[WIP] API d\'Intégration', link: 'fr/reference/integrations-reference' },
+		{ text: '[WIP] Règles de Routage', link: 'fr/core-concepts/routing' },
+		{ text: '[WIP] Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
