@@ -183,7 +183,8 @@ export const SIDEBAR = {
 			// Links to the configuration reference are not yet available in other languages, redirecting to the english docs instead.
 			link: 'en/reference/configuration-reference',
 		},
-		{ text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
+		// Comment out the following line when the directive PR (withastro#282) is merged
+		// { text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
 		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 		{ text: 'API d\'Intégration', link: 'fr/reference/integrations-reference' },
