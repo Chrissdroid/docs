@@ -76,12 +76,12 @@ Vous pouvez également fournir des définitions de type manuellement à VSCode, 
 
 ## Référencement des Fichiers Relatifs
 
-Si vous indiquez un chemin relatif à `projectRoot` ou à l'option `--project-root`, Astro va résoudre ce chemin par rapport au répertoire de travail actuel où vous avez exécuté la commande `astro`.
+Si vous indiquez un chemin relatif à `root` ou à l'option `--root`, Astro va résoudre ce chemin par rapport au répertoire de travail actuel où vous avez exécuté la commande `astro`.
 
 ```js
 export default defineConfig({
     // Cherches vers le répertoire "./foo" dans le répertoire de travail actuel
-    projectRoot: 'foo'
+    root: 'foo'
 })
 ```
 
@@ -90,9 +90,9 @@ Astro va chercher toutes les autres chaînes de caractères de fichiers et de r�
 ```js
 export default defineConfig({
     // Se dirige vers le répertoire "./foo" dans le répertoire de travail actuel
-    projectRoot: 'foo',
+    root: 'foo',
     // Se dirige vers le répertoire "./foo/public" dans le répertoire de travail actuel
-    public: 'public',
+    publicDir: 'public',
 })
 ```
 
@@ -101,9 +101,9 @@ Pour référencer un fichier ou un répertoire relatif au fichier de configurati
 ```js
 export default defineConfig({
     // Se dirige vers le répertoire "./foo", relatif à ce fichier de configuration
-    projectRoot: new URL("./foo", import.meta.url),
+    root: new URL("./foo", import.meta.url),
     // Se dirige vers le répertoire "./public", relatif à ce fichier de configuration
-    public: new URL("./public", import.meta.url),
+    publicDir: new URL("./public", import.meta.url),
 })
 ```
 
