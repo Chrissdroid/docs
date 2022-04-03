@@ -180,7 +180,8 @@ export const SIDEBAR = {
 		{ text: 'Références', header: true, type: 'api' },
 		{
 			text: '[WIP] Configuration',
-			link: 'fr/reference/configuration-reference',
+			// Links to the configuration reference are not yet available in other languages, redirecting to the english docs instead.
+			link: 'en/reference/configuration-reference',
 		},
 		{ text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
 		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
