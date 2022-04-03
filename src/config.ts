@@ -187,7 +187,7 @@ export const SIDEBAR = {
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 		{ text: 'API d\'Intégration', link: 'fr/reference/integrations-reference' },
 		{ text: 'Règles de Routage', link: 'fr/core-concepts/routing' },
-		{ text: '[WIP] Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
+		{ text: 'Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
 	],
 	bn: [
 		{ text: 'সেটআপ', header: true, type: 'learn' },
