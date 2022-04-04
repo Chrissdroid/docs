@@ -10,26 +10,26 @@ Alors que nous essayons de garder les changements de versions à faible niveau, 
 
 <!-- TODO [i18n-FR] migration guide -->
 
-## Migrate to v0.26
-### New Configuration API
+## Migrer vers v0.26
+### Nouvelle API de Configuration
 
-Our Configuration API has been redesigned to solve a few glaring points of confusion that had built up over the last year. Most configuration has just been moved or renamed, which will hopefully be a quick update for most users. A few options have been refactored more heavily, and may require a few additional changes:
+Notre API de configuration a été modifiée pour résoudre quelques points de confusion qui se sont accumulés durant les derniers mois. La plupart de la configuration a été déplacé ou renommé, ce qui devrais être, nous l'espérons, une mise à jour rapide pour la plupart des utilisateurs. Quelques options ont été rééditées plus que d'autres, et peuvent nécessiter quelques modifications supplémentaires.
 
-- `.buildOptions.site` has been replaced with `.site` (your deployed domain) and a new `.base` (your deployed subpath) option.
-- `.markdownOptions` has been replaced with `.markdown`, a mostly similar config object with some small changes to simplify Markdown configuration.
-- `.sitemap` has been moved into the [@astrojs/sitemap](https://www.npmjs.com/package/@astrojs/sitemap) integration.
+- `.buildOptions.site` à été remplacé par `.site` (votre nom de domaine déployé) et une nouvelle option `.base` (votre sous-chemin de déploiement).
+- `.markdownOptions` a été remplacé par `.markdown`, un objet semblable à `.buildOptions` avec quelques petites modifications pour simplifier la configuration du Markdown.
+- `.sitemap` a été déplacé dans l'intégration [@astrojs/sitemap](https://www.npmjs.com/package/@astrojs/sitemap).
 
-If you run Astro with legacy configuration, you will see a warning with instructions on how to update. See our updated [Configuration Reference](/en/reference/configuration-reference/) for more information on upgrading.
+Si vous rencontrez des problèmes avec l'ancienne configuration, vous aurez surement un avertissement dans votre terminal avec des instructions pour la mettre à jour. Consultez notre [Référence de Configuration](/fr/reference/configuration-reference/) pour plus d'informations sur cette mise à jour.
 
-Read [RFC0019](https://github.com/withastro/rfcs/blob/main/proposals/0019-config-finalization.md) for more background on these changes.
+Lisez l'[RFC0019](https://github.com/withastro/rfcs/blob/main/proposals/0019-config-finalization.md) pour plus d'informations sur ces changements.
 
-### New Markdown API
+### Nouvelle API Markdown
 
-Astro v0.26 releases a brand new Markdown API for your content. This included three major user-facing changes:
-- You can now `import`/`import()` markdown content directly using an ESM import.
-- A new `Astro.glob()` API, for easier glob imports (especially for Markdown).
-- **BREAKING CHANGE:** `Astro.fetchContent()` has been removed and replaced by `Astro.glob()`
-- **BREAKING CHANGE:** Markdown objects have an updated interface.
+Astro v0.26 a sortie une nouvelle API Markdown pour vos contenus. Cela comprend trois changements majeurs pour l'utilisateur :
+- Vous pouvez maintenant `import`/`import()` directement depuis le contenu du Markdown avec l'import ESM.
+- Une nouvelle API `Astro.glob()`, pour faciliter les importations globales (notamment pour Markdown).
+- **Changement important :** `Astro.fetchContent()` a été supprimé et remplacé par `Astro.glob()`
+- **Changement important :** Les objets Markdown ont une interface toute neuve.
 
 ```diff
 // v0.25
@@ -38,22 +38,22 @@ Astro v0.26 releases a brand new Markdown API for your content. This included th
 + let allPosts = await Astro.glob('./posts/*.md');
 ```
 
-When migrating, be careful about the new Markdown object interface. Frontmatter, for example, has been moved to the `.frontmatter` property, so references like `post.title` should change to `post.frontmatter.title`.
+Quand vous migrez, soyez prudent sur l'interface de nouveaux objets Markdown. Le frontmatter, par exemple, a été déplacé vers la propriété `.frontmatter`, donc les références comme `post.title` devraient êtres changés en `post.frontmatter.title`.
 
-This should solve many issues for Markdown users, including some nice performance boosts for larger sites.
+Cela devrait résoudre quelques problèmes pour les utilisateurs du Markdown, y compris quelques améliorations de performance pour les sites plus volumineux.
 
-Read [RFC0017](https://github.com/withastro/rfcs/blob/main/proposals/0017-markdown-content-redesign.md) for more background on these changes.
+Lisez l'[RFC0017](https://github.com/withastro/rfcs/blob/main/proposals/0017-markdown-content-redesign.md) pour plus d'informations sur ces changements.
 
-### New Default Script Behavior
+### Nouveau comportement par défaut des scripts
 
-`<script>` tags in Astro components are now built, bundled and optimized by default. This completes a long-term move to make our Astro component syntax more consistent, matching the default-optimized behavior our `<style>` tags have today.
+Les balises `<script>` dans les composants Astro sont maintenant compilées, assemblées et optimisées par défaut. Cela complète un changement a long terme pour rendre la syntaxe de nos composants Astro plus cohérente, similaire au comportement optimisé par défaut des balises `<style>` actuel.
 
-This includes a few changes to be aware of:
+Cela inclut quelques changements à prendre en compte :
 
-- **BREAKING:** `<script hoist>` is the new default `<script>` behavior. The `hoist` attribute has been removed.
-- New `<script is:inline>` directive, to revert a `<script>` tag to previous default behavior (unbuilt, unbundled, untouched by Astro).
-- New `<style is:inline>` directive, to leave a style tag inline in the page template (similar to previous `<script>` behavior).
-- New `<style is:global>` directive to replace `<style global>` in a future release.
+- **Important :** `<script hoist>` est le nouveau comportement par défaut des `<script>`. L'attribut `hoist` a été supprimé.
+- Nouvelle directive `<script is:inline>`, pour revenir à l'ancien comportement par défaut d'une balise `<script>` (non compilée, non assemblée, inchangée par Astro).
+- Nouvelle directive `<style is:inline>`, pour laisser une balise `<style>` dans le template de la page (comme le comportement par défaut des `<script>`).
+- Nouvelle directive `<style is:global>` pour remplacer `<style global>` dans une prochaine version.
 
 
 ```diff
@@ -63,27 +63,27 @@ This includes a few changes to be aware of:
 + <script>
 ```
 
-Read [RFC0016](https://github.com/withastro/rfcs/blob/main/proposals/0016-style-script-defaults.md) for more background on these changes.
+Lisez l'[RFC0016](https://github.com/withastro/rfcs/blob/main/proposals/0016-style-script-defaults.md) pour plus d'informations sur ces changements.
 
-### Updated Astro.request API
-
-
-`Astro.request` has been changed from our custom object to a standard `Request` object. This is part of a project to use more web standard APIs, especially where SSR is concerned.
-
-This includes a few changes to be aware of:
-
-- Change `Astro.request` to become a [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object.
-- Move `Astro.request.params` to `Astro.params`.
-- Move `Astro.request.canonicalURL` to `Astro.canonicalURL`.
-
-Read [RFC0018](https://github.com/withastro/rfcs/blob/main/proposals/0018-astro-request.md) for more background on these changes.
+### Nouvelle API Astro.request
 
 
-### Other Changes
+`Astro.request` a été changé de notre objet personnalisé vers un objet standard `Request`. Cela est une partie d'un projet pour utiliser plus d'APIs web standardisés, notamment lorsque l'SSR est concerné.
 
-- Improve `Astro.slots` API to support passing arguments to function-based slots. This allows for more ergonomic utility components that accept a callback function as a child.
-- Update CLI output formatting, especially around error reporting.
-- Update `@astrojs/compiler`, fixing some bugs related to RegExp usage in frontmatter
+Cela inclut quelques changements à prendre en compte :
+
+- Changement d'`Astro.request` pour devenir un objet [Request](https://developer.mozilla.org/fr/docs/Web/API/Request).
+- Déplacement de `Astro.request.params` vers `Astro.params`.
+- Déplacement de `Astro.request.canonicalURL` vers `Astro.canonicalURL`.
+
+Lisez l'[RFC0018](https://github.com/withastro/rfcs/blob/main/proposals/0018-astro-request.md) pour plus d'informations sur ces changements.
+
+
+### Autres changements
+
+- Amélioration de l'API `Astro.slots` pour permettre de passer des arguments à des slots basés sur des fonctions. Cela permet de créer des composants plus ergonomiques qui acceptent une fonction callback comme enfant.
+- Mise à jour du retour console de l'ILC, surtout autour des messages d'erreurs.
+- Mise à jour `@astrojs/compiler` pour corriger quelques bugs liés à l'utilisation d'expressions régulières dans le frontmatter
 
 ## Migrate to v0.25
 
