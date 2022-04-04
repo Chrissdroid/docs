@@ -8,7 +8,7 @@ Astro utilise Vite pour les variables d'environnement, et permet d'utiliser n'im
 
 Notez que toutes les variables d'environnement sont disponibles dans le code coté serveur, mais seulement les variables préfixées avec `PUBLIC_` sont disponibles dans le code client.
 
-Jetez un œil à l'exemple officiel des [variables d'environnement](https://github.com/withastro/astro/tree/main/examples/env-vars) pour connaître des meilleures pratiques.
+Jetez un oeil à l'exemple officiel des [variables d'environnement](https://github.com/withastro/astro/tree/main/examples/env-vars) pour connaître des meilleures pratiques.
 
 Pour des raisons de sécurité, seules les variables préfixées avec `PUBLIC_` sont accessibles par le code client.
 
