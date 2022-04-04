@@ -176,6 +176,7 @@ export const SIDEBAR = {
 		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
 		{ text: 'Flux RSS', link: 'fr/guides/rss' },
 		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
+		{ text: 'Affichage côté serveur (expérimental)', link: 'fr/guides/server-side-rendering' },
 
 		{ text: 'Références', header: true, type: 'api' },
 		{
@@ -188,6 +189,7 @@ export const SIDEBAR = {
 		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 		{ text: 'API d\'Intégration', link: 'fr/reference/integrations-reference' },
+		{ text: 'API des adaptateurs (expérimental)', link: 'fr/reference/adapter-reference' },
 		{ text: 'Règles de Routage', link: 'fr/core-concepts/routing' },
 		{ text: 'Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
 	],
