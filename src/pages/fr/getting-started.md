@@ -7,15 +7,15 @@ description: Une intro basique a Astro.
 ---
 Générateur de site statique  🚀  Amenez votre propre Framework  🚀  Expédiez moins de JavaScript
 
-## Essayer Astro
+## Essayez Astro
 
-Nous avons fait de la façon la plus simple possible pour commencer avec Astro, soit dans votre navigateur, soit sur votre machine !
+Nous avons simplifié au maximum votre début dans Astro, que ce soit dans votre navigateur ou sur votre machine !
 
 ### Environnements d'essais en ligne
 
-Visitez [astro.new](https://astro.new) pour la façon la plus simple d' "essayer avant d'acheter". Choisissez parmi une variété de modèles de démarrage et commencez à construire une version complète, et fonctionnelle d'Astro dans votre navigateur !
+Visitez [astro.new](https://astro.new) pour la façon la plus simple d' "essayer avant d'acheter". Choisissez parmi une variété de modèles de démarrage et commencez à construire une version complète et fonctionnelle d'Astro dans votre navigateur !
 
-Ou alors, **lancez notre projet d'essai basique instantanément** grâce à un simple clic de bouton :
+Ou alors, **lancez notre projet d'essai basique instantanément** grâce à un simple clic :
 
 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
     <Button href="https://astro.new/starter?on=codesandbox">Ouvrir dans CodeSandbox</Button>
@@ -35,14 +35,14 @@ npm init astro
 
 ⚙️ Notre [Guide d'installation](/fr/install/auto) contient les instructions complètes et détaillées pour installer Astro avec votre gestionnaire de paquets favori.
 
-⚙️ Où alors, jetez un oeil aux instructions pour une [Installation manuelle](/fr/install/manual/).
+⚙️ Ou alors, jetez un oeil aux instructions pour une [Installation manuelle](/fr/install/manual/).
 
 
 ## Commencer à construire avec Astro
 
 Allez directement à l'essentiel et ajoutez quelques contenus et fonctionnalités à votre site !
 
-🏗️ Ajouter de nouvelles [Pages Astro](/fr/core-concepts/astro-pages) et/ou [Pages Markdown](/fr/guides/markdown-content) à votre site.
+🏗️ Ajoutez de nouvelles [Pages Astro](/fr/core-concepts/astro-pages) et/ou [Pages Markdown](/fr/guides/markdown-content) à votre site.
 
 🏗️ Créez votre premier [Layout](/fr/core-concepts/layouts).
 
@@ -53,7 +53,7 @@ Allez directement à l'essentiel et ajoutez quelques contenus et fonctionnalité
 
 ## Apprendre Astro
 
-Regardez ces quelques exemples de concepts et modèles de sites construits avec Astro !
+Voici quelques exemples de concepts et modèles de sites construits avec Astro !
 
 📚 Lire plus à propos de la [Structure du Projet](/fr/core-concepts/project-structure) d'Astro.
 
@@ -79,7 +79,7 @@ Explorez les différentes intégrations que nos utilisateurs ont combiné avec A
 
 ## Rejoindre notre communauté
 
-Rejoignez nous dans le [Discord d'Astro](https://astro.build/chat) pour partager vos créations et obtenir l'aide d'une communauté active et conviviale !
+Venez sur [notre Discord](https://astro.build/chat) pour partager vos créations et obtenir l'aide d'une communauté active et conviviale !
 
 💬 Dites bonjour dans notre salon `#introduce-yourself` !
 
