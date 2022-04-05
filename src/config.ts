@@ -33,8 +33,7 @@ export const SIDEBAR = {
 		{ text: 'Integrations', link: 'en/guides/integrations-guide' },
 		{ text: 'RSS', link: 'en/guides/rss' },
 		{ text: 'UI Frameworks', link: 'en/core-concepts/framework-components' },
-		{ text: 'Server-side Rendering (experimental)', link: 'en/guides/server-side-rendering' },
-    
+
 		{ text: 'Reference', header: true, type: 'api' },
 		{
 			text: 'Configuration',
