@@ -47,14 +47,14 @@ Spécifie le chemin vers le fichier de configuration. Par défaut, `astro.config
 astro --config config/astro.config.mjs dev
 ```
 
-### `--project-root path`
+### `--root path`
 
 Spécifie le chemin vers le répertoire racine du projet. Si non spécifié, le répertoire courant est considéré comme étant le répertoire racine.
 
 Le répertoire racine est utilisé pour trouver le fichier de configuration d'Astro.
 
 ```shell
-astro --project-root examples/snowpack dev
+astro --root examples/snowpack dev
 ```
 
 ### `--reload`
