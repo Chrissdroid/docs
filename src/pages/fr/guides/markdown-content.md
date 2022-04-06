@@ -359,20 +359,15 @@ Si vous choisissez d'utiliser Prism, nous appliquerons les classes CSS de Prism 
 
 #### Choisissez un colorateur syntaxique
 
-Shiki est notre colorateur syntaxique par défaut. Si vous souhaitez utiliser `'prism'` ou désactiver la coloration syntaxique entièrement, vous pouvez utiliser l'objet de configuration `@astrojs/markdown-remark` :
+Shiki est notre colorateur syntaxique par défaut. Si vous souhaitez utiliser `'prism'` ou désactiver la coloration syntaxique entièrement, vous pouvez utiliser l'objet de configuration `markdown` :
 
 ```js
 // astro.config.mjs
 export default {
-  markdownOptions: {
-    render: [
-      '@astrojs/markdown-remark',
-      {
-        // Peux aussi être 'shiki' (par défaut), 'prism' ou false pour désactiver la coloration
-        syntaxHighlight: 'prism',
-      },
-    ],
-  },
+  markdown: {
+    // Peux aussi être 'shiki' (par défaut), 'prism' ou false pour désactiver la coloration
+    syntaxHighlight: 'prism',
+  }
 };
 ```
 
