@@ -271,7 +271,7 @@ La syntaxe de composant Astro est une surcouche de l'HTML. Elle a été conçue 
 | Demande une importation JS           | Non | Oui, `jsxPragma` (`React` ou `h`) doit être dans la portée du code |
 | Fragments                            | Niveau global automatique, `<Fragment>` ou `<>` dans les fonctions | Entourer d'un `<Fragment>` ou d'un `<>` |
 | Frameworks multiples par page        | Oui | Non |
-| Modification de la balise `<head>`   | Utilise juste `<head>` | Par Framework (`<Head>`, `<svelte:head>`, etc) |
+| Modification de la balise `<head>`   | Utilise juste `<head>` dans les composants de pages | Par Framework (`<Head>`, `<svelte:head>`, etc) |
 | Style des commentaires               | `<!-- HTML -->` | `{/_ JavaScript _/}`  |
 | Caractères spéciaux                  | `&nbsp;`  | `&nbsp;`  |
 | Attributs                            | `dash-case` | `camelCase`|
