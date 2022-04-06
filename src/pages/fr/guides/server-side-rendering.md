@@ -15,8 +15,10 @@ L'affichage côté serveur, aka SSR (De l'anglais, "Server-Side Rendering"), est
 
 Pour activer l'SSR, vous devez utiliser un adaptateur. Les adaptateurs suivants sont disponibles aujourd'hui avec d'autres à venir dans le futur :
 
+- [Deno](https://github.com/withastro/astro/tree/main/packages/integrations/deno)
 - [Netlify](https://github.com/withastro/astro/tree/main/packages/integrations/netlify)
 - [Node.js](https://github.com/withastro/astro/tree/main/packages/integrations/node)
+- [Vercel](https://github.com/withastro/astro/tree/main/packages/integrations/vercel)
 
 Dans cet exemple, nous allons utiliser `@astrojs/netlify` pour construire avec Netlify. Pour cela, installez l'adaptateur :
 
