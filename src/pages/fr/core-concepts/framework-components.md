@@ -97,7 +97,7 @@ Commence à importer le JS du composant dès que l'élément entre dans la zone 
 
 💡 *Utile pour le contenu plus bas sur la page.*
 
-#### `client:media=[accolade]QUERY[accolade]`
+#### `client:media={QUERY}`
 
 Commence à importer le JS du composant dès que le navigateur correspond à la requête média donnée.
 
