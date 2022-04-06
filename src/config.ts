@@ -75,6 +75,10 @@ export const SIDEBAR = {
 		{ text: 'Beginnen', link: 'nl/getting-started' },
 		{ text: 'Snel start', link: 'nl/quick-start' },
 	],
+	'pt-BR': [
+		{ text: 'Instalação', header: true, type: 'learn' },
+		{ text: 'Introdução', link: 'pt-BR/getting-started' },
+	],
 	fi: [
 		{ text: 'Tervetuloa', header: true, type: 'learn' },
 		{ text: 'Aloittaminen', link: 'fi/getting-started' },
@@ -124,7 +128,6 @@ export const SIDEBAR = {
 			text: 'Referencia de configuración',
 			link: 'es/reference/configuration-reference',
 		},
-
 	],
 	'zh-CN': [
 		{ text: '起步', header: true, type: 'learn' },
