@@ -5,7 +5,7 @@ description: Comparaison entre Astro et d'autres générateurs de sites statique
 ---
 Nous avons souvent la question, "Quels sont les avantages d'Astro par rapport à mon projet préféré, **\_\_\_\_**?"
 
-Ce guide à été écris pour répondre à cette question pour plusieurs générateurs de sites et alternatives à Astro.
+Ce guide a été écrit pour répondre à cette question pour plusieurs générateurs de sites et alternatives à Astro.
 
 Les deux principales caractéristiques de Astro par rapport aux autres alternatives sont :
 
@@ -45,9 +45,9 @@ Elder.js utilise Svelte pour afficher votre site web. Cepedant, Astro est plus f
 
 Elder.js est l'unique, sur cette liste, générateur de site statique qui supporte l'[hydratation partielle](/fr/core-concepts/partial-hydration). Astro et Elder.js sont tous deux capables de retirer du code JavaScript inutile de la page, hydratant seulement les composants individuels qui en ont besoin. Elder.js a une API d'hydratation partielle différente et Astro supporte quelques fonctionnalités qu'Elder.js ne possède pas (comme `client:media`). Cependant, côté performances, les deux générateurs produiront des sites très similaires.
 
-Elder.js utilises une façon de gérer les routes qui peut sembler étrange pour les nouveaux développeurs. Astro utilise [un routage par fichier](/fr/core-concepts/routing) qui devrait sembler familiarisé pour tout ceux qui viennent de Next.js, SvelteKit, et même d'autres générateurs de sites statiques comme Eleventy.
+Elder.js utilises une façon de gérer les routes qui peut sembler étrange pour les nouveaux développeurs. Astro utilise [un routage par fichier](/fr/core-concepts/routing) qui devrait sembler familier pour tout ceux qui utilisent de Next.js, SvelteKit, ou même d'autres générateurs de sites statiques comme Eleventy.
 
-Elder.js à été conçu pour être utilisé sur des sites très larges, et dis pouvoir compiler un seul site de ~20 000 pages en moins de 10 minutes (sur une machine virtuelle modeste). Au moment de la rédaction, Astro a construit ~1 000 pages en 66 secondes, mais il n'a pas encore été testé sur des projets de plus de 20 000 pages. Astro est toujours en bêta, et atteindre la vitesse de construction Elder.js est un objectif pour la version 1.0 de Astro.
+Elder.js à été conçu pour être utilisé sur des sites très larges, et est capable de compiler un seul site de ~20 000 pages en moins de 10 minutes (sur une machine virtuelle modeste). Au moment de la rédaction, Astro a construit ~1 000 pages en 66 secondes, mais il n'a pas encore été testé sur des projets de plus de 20 000 pages. Astro est toujours en bêta, et atteindre la vitesse de construction Elder.js est un objectif pour la version 1.0 de Astro.
 
 Elder.js supporte la génération de page statique (SSG) et le rendu du site (SSG). À ce jour, Astro ne supporte que la génération de page statique (SSG).
 
@@ -273,7 +273,7 @@ La syntaxe de composant Astro est une surcouche de l'HTML. Elle a été conçue 
 | Frameworks multiples par page        | Oui | Non |
 | Modification de la balise `<head>`   | Utilise juste `<head>` | Par Framework (`<Head>`, `<svelte:head>`, etc) |
 | Style des commentaires               | `<!-- HTML -->` | `{/_ JavaScript _/}`  |
-| Charactères spéciaux                 | `&nbsp;`  | `&nbsp;`  |
+| Caractères spéciaux                  | `&nbsp;`  | `&nbsp;`  |
 | Attributs                            | `dash-case` | `camelCase`|
 
 [code-ext]: https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode

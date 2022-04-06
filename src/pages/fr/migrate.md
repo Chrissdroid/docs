@@ -83,7 +83,7 @@ Lisez l'[RFC0018](https://github.com/withastro/rfcs/blob/main/proposals/0018-ast
 
 - Amélioration de l'API `Astro.slots` pour permettre de passer des arguments à des slots basés sur des fonctions. Cela permet de créer des composants plus ergonomiques qui acceptent une fonction callback comme enfant.
 - Mise à jour du retour console de l'ILC, surtout autour des messages d'erreurs.
-- Mise à jour `@astrojs/compiler` pour corriger quelques bugs liés à l'utilisation d'expressions régulières dans le frontmatter
+- Mise à jour du package `@astrojs/compiler` pour corriger quelques bugs liés à l'utilisation d'expressions régulières dans le *front-matter*
 
 ## Migrate to v0.25
 

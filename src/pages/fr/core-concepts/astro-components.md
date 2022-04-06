@@ -8,13 +8,13 @@ description: Une introduction à la syntaxe des composants en .astro.
 
 La syntaxe des composants Astro est une surcouche de l'HTML. Elle a été conçue pour ressembler à ceux qui écrivent du HTML ou du JSX, et ajoute la possibilité d'inclure des composants et des expressions JavaScript. Vous pouvez remarquer un composant Astro par son extension de fichier : `.astro`.
 
-Les composants Astro sont extrêmement flexible. Il y a souvent des composants qui contiennent des **UI réutilisables sur la page**, comme un header ou un profil. D'autres composants peuvent contenir un morceau de HTML, comme un ensemble de balises `<meta>` qui rendent le SEO facile à utiliser. Les composants Astro peuvent aussi contenir un layout de page entier.
+Les composants Astro sont extrêmement flexibles. Il y a souvent des composants qui contiennent des **UI réutilisables sur la page**, comme un header ou un profil. D'autres composants peuvent contenir un morceau de HTML, comme un ensemble de balises `<meta>` qui rendent le SEO facile à utiliser. Les composants Astro peuvent aussi contenir un Layout entier de page.
 
-La chose la plus importante à savoir sur les composants Astro est qu'**ils rendent leurs contenus HTML durant la compilation**. Cela signifie que si vous utilisez du JavaScript dans vos composants, ils seront tous exécutés avant la compilation, et que le résultat sera un site plus rapide, avec aucune charge de JavaScript ajoutée par défaut.
+La chose la plus importante à savoir sur les composants Astro est qu'**ils rendent leurs contenus HTML durant la compilation**. Cela signifie que si vous utilisez du JavaScript dans vos composants, ils seront tous exécutés avant la compilation, et que le résultat sera un site plus rapide, avec aucun chargement de JavaScript ajoutée par défaut.
 
 ## Vue d'ensemble des composants
 
-Un composant Astro est composé de deux parties principales : le **Script du composant** et le **Template du composant**. Chacune de ces parties s'occupent de faire une tâche différente, mais ensembles, font un cadre qui est facile à utiliser et qui est assez expressive pour gérer ce que vous voulez construire.
+Un composant Astro est composé de deux parties principales : le **Script du composant** et le **Template du composant**. Chacune de ces parties s'occupe de faire une tâche différente, mais ensemble, fait un cadre qui est facile à utiliser et qui est assez expressif pour gérer la plupart des cas.
 
 ```astro
 ---
@@ -39,7 +39,7 @@ import Button from './Button.astro';
 
 ### Le script du composant
 
-Astro utilise des barres de code (`---`) pour identifier le script du composant dans votre composant Astro. Si vous avez déjà écrit du Markdown avant, vous pourriez être déjà familiarisé avec un concept similaire appelé *front matter*. L'idée de l'astro est directement inspirée de ce concept.
+Astro utilise des barres de code (`---`) pour identifier le script du composant dans votre composant Astro. Si vous avez déjà écrit du Markdown avant, vous pourriez être déjà familier avec un concept similaire appelé *front-matter*. Astro est directement inspiré de cela.
 
 Vous pouvez utiliser le script du composant pour écrire du code JavaScript qui vous aidera à construire votre template. Cela peut inclure :
 
@@ -212,7 +212,7 @@ const name = "Astro"
 
 L'élément `<slot>` est un espace réservé pour HTML qui sera passé en dehors du composant par ses "enfants" (comme ils sont appelés dans React ou Preact). Les emplacements sont une façon de passer des données dans un composant Astro et sont utiles lorsque vous souhaitez réutiliser un composant "extérieur" rendu "autour" des données venant d'une source externe.
 
-Un composant qui utilise l'élément `<slot />` peut être considéré comme un "conteneur" réutilisable autour de d'autres contenus, et ce modèle est le coeur d'un composants [Layout](/fr/core-concepts/layouts).
+Un composant qui utilise l'élément `<slot />` peut être considéré comme un "conteneur" réutilisable autour de d'autres contenus, et ce modèle est le coeur des composants [Layouts](/fr/core-concepts/layouts).
 
 
 ```astro
@@ -337,7 +337,7 @@ Pour envoyer du JavaScript au navigateur sans utiliser un [composant de framewor
 
 #### Chargement de scripts externes
 
-**Quand utiliser cette fonctionnalitée :** Si votre fichier JavaScript se trouve dans `public/`.
+**Quand utiliser cette fonctionnalité :** Si votre fichier JavaScript se trouve dans `public/`.
 
 Notez que cette approche évite le traitement, le bundling et les optimisations JavaScript fournies par Astro lorsque vous utilisez la méthode d'importation décrite ci-dessous.
 
@@ -348,9 +348,9 @@ Notez que cette approche évite le traitement, le bundling et les optimisations 
 
 #### Utilisation des scripts hoistés
 
-**Quand utiliser cette fonctionnalitée :** Si votre script externe se trouve dans `src/` _et_ supporte l'importation par module ESM.
+**Quand utiliser cette fonctionnalité :** Si votre script externe se trouve dans `src/` _et_ supporte l'importation par module ESM.
 
-Astro detecte ces importations JavaScript côté client, les compile, optimise et les ajoute automatiquement le JS au code HTML.
+Astro détecte ces importations JavaScript côté client, les compile, optimise et les ajoute automatiquement le JS au code HTML.
 
 ```astro
 // importation ESM
