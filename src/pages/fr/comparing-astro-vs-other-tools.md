@@ -267,6 +267,7 @@ La syntaxe de composant Astro est une surcouche de l'HTML. Elle a été conçue 
 | Attributs étendus                    | `{...props}` | `{...props}` |
 | Attributs conditionnels              | `autocomplete` === `autocomplete={true}` | `autocomplete` === `autocomplete={true}` |
 | Fonctions inter-lignes               | `{items.map(item => <li>{item}</li>)}`  | `{items.map(item => <li>{item}</li>)}` |
+| Affichage conditionnel               | `{condition && <p>texte<p>}`  | `{condition && <p>texte<p>}` |
 | Supports d'éditeur de code           | [VS Code][code-ext] | Phénoménal |
 | Demande une importation JS           | Non | Oui, `jsxPragma` (`React` ou `h`) doit être dans la portée du code |
 | Fragments                            | Niveau global automatique, `<Fragment>` ou `<>` dans les fonctions | Entourer d'un `<Fragment>` ou d'un `<>` |
