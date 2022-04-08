@@ -1,4 +1,6 @@
 ---
+title: Installation d'Astro avec l'ILC automatique
+description: Comment installer Astro avec NPM, PNPM, ou Yarn via l'outil de création create-astro inclus dans l'ILC.
 layout: ~/layouts/InstallLayout.astro
 ---
 

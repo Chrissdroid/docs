@@ -33,10 +33,19 @@ export const translations = checkLanguages({
 	'zh-TW': {},
 	bg: {},
 	fr: {
-		// Left Sidebar tab headings
+		'a11y.skipLink': 'Aller au contenu principal',
+		'navbar.a11yTitle': 'Navigation principale',
+		// Site settings
+		'site.title': 'Documentation Astro',
+		'site.description': 'Compilez des sites plus rapidement avec moins de JavaScript pour vos utilisateurs.',
+		// Left Sidebar
+		'leftSidebar.a11yTitle': 'Navigation du site',
 		'leftSidebar.learnTab': 'Apprendre',
 		'leftSidebar.referenceTab': 'Référence',
+		'leftSidebar.noTranslations': 'Aucune traduction trouvée.',
+		'leftSidebar.viewInEnglish': 'Voir en anglais',
 		// Right Sidebar
+		'rightSidebar.a11yTitle': 'Table des matières',
 		'rightSidebar.onThisPage': 'Sur cette page',
 		'rightSidebar.overview': 'Vue générale',
 		'rightSidebar.more': 'Plus',
@@ -49,6 +58,9 @@ export const translations = checkLanguages({
 		// Used in `<Since>`: Added in: v0.24.0 [NEW]
 		'since.addedIn': 'Ajouté à la version :',
 		'since.new': 'Nouveau',
+		// Installation Guide
+		'install.autoTab': 'Automatiquement via l\'ILC',
+		'install.manualTab': 'Configuration manuelle',
 	},
 	bn: {},
 	kr: {},
