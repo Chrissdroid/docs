@@ -60,6 +60,8 @@ export const translations = checkLanguages({
 		// Used in `<Since>`: Added in: v0.24.0 [NEW]
 		'since.addedIn': 'Ajouté à la version :',
 		'since.new': 'Nouveau',
+		// `<ContributorList>` fallback text
+		'contributors.seeAll': 'Voir tout les contributeurs',
 		// Installation Guide
 		'install.autoTab': 'Automatiquement via l\'ILC',
 		'install.manualTab': 'Configuration manuelle',
