@@ -155,7 +155,7 @@ export const SIDEBAR = {
 		{ text: 'Bien Démarrer', link: 'fr/getting-started' },
 		{ text: 'Installation', link: 'fr/install' },
 		{ text: 'Configuration de l\'éditeur de code', link: 'fr/editor-setup' },
-		{ text: '[WIP] Guide de Migration', link: 'fr/migrate' },
+		{ text: 'Guide de Migration', link: 'fr/migrate' },
 		{ text: 'Construit avec Astro', link: `fr/integrations/integrations` },
 		{ text: '[WIP] Astro vs. X', link: 'fr/comparing-astro-vs-other-tools' },
 
