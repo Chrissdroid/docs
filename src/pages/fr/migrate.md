@@ -8,8 +8,6 @@ Ce guide existe pour vous aider à migrer vers la dernière version de Astro et 
 
 Alors que nous essayons de garder les changements de versions à faible niveau, nous nous attendons à quelques changements majeurs avant que nous atteignions la version 1.0. Lisez le guide ci-dessous pour voir les modifications majeures et les instructions pour mettre à jour vers cette version.
 
-<!-- TODO [i18n-FR] migration guide -->
-
 ## Migrer vers v0.26
 ### Nouvelle API de Configuration
 
@@ -85,38 +83,38 @@ Lisez l'[RFC0018](https://github.com/withastro/rfcs/blob/main/proposals/0018-ast
 - Mise à jour du retour console de l'ILC, surtout autour des messages d'erreurs.
 - Mise à jour du package `@astrojs/compiler` pour corriger quelques bugs liés à l'utilisation d'expressions régulières dans le *front-matter*
 
-## Migrate to v0.25
+## Migrer vers v0.25
 
-### Astro Integrations
+### Les integrations Astro
 
-The `renderers` config has been replaced by a new, official integration system! This unlocks some really exciting new features for Astro. You can read our [Using Integrations](/en/guides/integrations-guide) guide for more details on how to use this new system.
+La configurations des `renderers` a été remplacée par un nouveau système d'intégrations officielles ! Cela permet de débloquer de nouvelles fonctionnalités intéressantes pour Astro. Vous pouvez lire notre [Guide d'Utilisation des Integrations](/fr/guides/integrations-guide) pour plus d'informations sur comment utiliser ce nouveau système.
 
-Integrations replace our original `renderers` concept, and come with a few breaking changes and new defaults for existing users. These changes are covered below.
+Les integrations remplacent notre concept de `renderers`, et viennent aussi avec des changements et des nouvelles options par défaut pour les utilisateurs actuels. Ces changements sont décrits ci-dessous.
 
-#### Removed: Built-in Framework Support
+#### Suppression : Support intégré des Framework
 
-Previously, React, Preact, Svelte, and Vue were all included with Astro by default. Starting in v0.25.0, Astro no longer comes with any built-in renderers. If you did not have a `renderers` configuration entry already defined for your project, you will now need to install those frameworks yourself.
+Précédemment, React, Preact, Svelte, et Vue étaient tous inclus par défaut avec Astro. Depuis la version 0.25.0, Astro n'inclue plus de `renderers` intégrés. Si vous n'avez pas déjà une configuration d'entrée `renderers` définie pour votre projet, vous devrez maintenant installer ces Frameworks par vous-même.
 
-Read our [step-by-step walkthrough](/en/guides/integrations-guide) to learn how to add a new Astro integration for the framework(s) that you currently use.
-#### Deprecated: Renderers
+Lisez notre [guide pas à pas](/fr/guides/integrations-guide) pour apprendre comment ajouter une nouvelle integration Astro pour le(s) Framework(s) que vous utilisez actuellement.
+#### `renderers` obsolètes
 
-> *Read this section if you have custom "renderers" already defined in your configuration file.*
+> *Lisez cette section si vous avez des `renderers` personnalisés définis dans votre fichier de configuration.*
 
-The new integration system replaces the previous `renderers` system, including the published `@astrojs/renderer-*` packages on npm. Going forward, `@astrojs/renderer-react` becomes `@astrojs/react`, `@astrojs/renderer-vue` becomes `@astrojs/vue`, and so on.
+Le nouveau système d'intégrations remplace le précédent système de `renderers`, incluant les packages `@astrojs/renderer-*` publiés sur npm. Dans cet optique, `@astrojs/renderer-react` devient `@astrojs/react`, `@astrojs/renderer-vue` devient `@astrojs/vue`, et ainsi de suite.
 
-**To migrate:** update Astro to `v0.25.0` and then run `astro dev` or `astro build` with your old configuration file containing the outdated `"renderers"` config. You will immediately see a notice telling you the exact changes you need to make to your `astro.config.mjs` file, based on your current config. You can also update your packages yourself, using the table below.
+**Pour effectuer la migration :** mettez à jour Astro à la version `v0.25.0` et ensuite exécutez `astro dev` ou `astro build` avec votre ancien fichier de configuration contenant la configuration obsolète `renderers`. Vous verrez immédiatement une notice indiquant les changements que vous devez faire dans le fichier `astro.config.mjs` en fonction de votre configuration actuelle. Vous pouvez également mettre à jour vos packages vous-même, en utilisant la table ci-dessous.
 
-For a deeper walkthrough, read our [step-by-step guide](/en/guides/integrations-guide) to learn how to replace existing renderers with a new Astro framework integration.
+Pour un guide plus détaillé, lisez notre [guide pas à pas](/fr/guides/integrations-guide) pour apprendre comment remplacer des `renderers` existants avec une nouvelle integration de Framework Astro.
 
 ```diff
-# Install your new integrations and frameworks:
-# (Read the full walkthrough: https://docs.astro.build/en/guides/integrations-guide)
+# Installez vos nouvelles intégrations et Frameworks :
+# (Lisez le guide complet : https://docs.astro.build/fr/guides/integrations-guide)
 + npm install @astrojs/lit lit
 + npm install @astrojs/react react react-dom
 ```
 ```diff
-# Then, update your `astro.config.js` file:
-# (Read the full walkthrough: https://docs.astro.build/en/guides/integrations-guide)
+# Ensuite, mettez à jour votre fichier `astro.config.js` :
+# (Lisez le guide complet : https://docs.astro.build/fr/guides/integrations-guide)
 + import lit from '@astrojs/lit';
 + import react from '@astrojs/react';
 
@@ -127,39 +125,39 @@ export default {
 ```
 
 
-| Deprecated Renderers on npm | v0.25+ Integrations on npm |
-| --------------------------- | -------------------------- |
-| @astrojs/renderer-react     | @astrojs/react             |
-| @astrojs/renderer-preact    | @astrojs/preact            |
-| @astrojs/renderer-solid     | @astrojs/solid-js          |
-| @astrojs/renderer-vue       | @astrojs/vue               |
-| @astrojs/renderer-svelte    | @astrojs/svelte            |
+| `renderers` obsolètes sur npm | Integrations `v0.25+` sur npm |
+| ----------------------------- | ----------------------------- |
+| @astrojs/renderer-react       | @astrojs/react                |
+| @astrojs/renderer-preact      | @astrojs/preact               |
+| @astrojs/renderer-solid       | @astrojs/solid-js             |
+| @astrojs/renderer-vue         | @astrojs/vue                  |
+| @astrojs/renderer-svelte      | @astrojs/svelte               |
 
-#### Handling Peer Dependencies
+#### Gestion des dépendances partagées
 
-> *Read this section if: You are on Node v14 **or** if you use any package manager other than npm.*
+> *Lisez cette section si : vous êtes sous Node 14 **ou** si vous utilisez un gestionnaire de package autre que npm.*
 
-Unlike the old renderers, integrations no longer mark the frameworks themselves ("react", "svelte", "vue", etc.) as direct dependencies of the integration. Instead, you should now install your framework packages *in addition to* your integrations.
+En opposition aux anciens `renderers`, les intégrations ne contiennent plus les Frameworks lui-mêmes ("react", "svelte", "vue", etc.) comme des dépendances directes. Vous devrez maintenant installer vos packages de Framework *en plus* de vos intégrations.
 
 ```diff
-# Example: Install integrations and frameworks together
+# Exemple : Installation des intégrations et des Frameworks ensemble
 - npm install @astrojs/react
 + npm install @astrojs/react react react-dom
 ```
 
-If you see a `"Cannot find package 'react'"` (or similar) warning when you start up Astro, that means that you need to install that package into your project. See our [note on peer dependencies](/en/guides/integrations-guide#peer-dependencies-warning) in the integrations guide for more information.
+Si vous voyez un message "Cannot find package 'react'" (ou similaire) lorsque vous lancez Astro, cela signifie que vous devez installer ce package dans votre projet. Lisez notre [note sur les dépendances partagées](/fr/guides/integrations-guide#gérer-les-dépendances-dintégration) dans le guide d'intégrations pour plus d'informations.
 
-If you are using `npm` & Node v16+, then this may be automatically handled for you by `npm`, since the latest version of `npm` (v7+) installs peer dependencies like this for you automatically. In that case, installing a framework like "react" into your project is an optional but still recommend step.
+Si vous utilisez `npm` et Node 16 ou supérieur, cela peut être automatiquement géré par `npm`, car la dernière version de `npm` (version 7 et plus) installe automatiquement les dépendances partagées comme celles-ci. Dans ce cas, installer un Framework comme "react" dans votre projet est une étape optionnelle mais toujours recommandée.
 
-### Updated: Syntax Highlighting
+### Mise à jour : Coloration syntaxique
 
-We love to find sensible defaults that "just work" out-of-the-box. As part of this, we decided to make [Shiki](https://github.com/shikijs/shiki) our new default syntax highlighter. This comes pre-configured with the `github-dark` theme, providing zero-config highlighting in your code blocks without extraneous CSS classes, stylesheets, or client-side JS.
+Nous adorons trouver des valeurs par défaut qui "fonctionnent simplement" tout en étant prêtes à l'emploi. En conséquence, nous avons décidé de faire de [Shiki](https://github.com/shikijs/shiki) notre nouveau colorateur syntaxique par défaut. Cela est pré-configuré avec le thème `github-dark`, fournissant une coloration syntaxique sans classes CSS, fiches de styles ou JS coté client.
 
-Check our new [syntax highlighting docs](/en/guides/markdown-content/#syntax-highlighting) for full details. **If you prefer to keep Prism as your syntax highlighter,** [set the `syntaxHighlight` option to `'prism'`](/en/guides/markdown-content/#prism-configuration) in your project's markdown configuration.
+Jetez un coup d'œil à notre nouvelle [documentation sur la coloration syntaxique](/fr/guides/markdown-content/#coloration-syntaxique) pour plus de détails. **Si vous préférez garder Prism comme votre colorateur syntaxique,** [configurez l'option `syntaxHighlight` à `'prism'`](/fr/guides/markdown-content/#configuration-de-shiki).
 
-#### The `<Prism />` component has a new home
+#### Le composant `<Prism />` a une nouvelle maison
 
-As part of our mission to keep Astro core as lean as possible, we've moved the built-in `Prism` component out of `astro/components` and into the `@astrojs/prism` package. You can now import this component from `@astrojs/prism` like so:
+Dans l'optique de garder le coeur d'Astro aussi minime que possible, nous avons déplacé le composant `Prism` hors de `astro/components` dans le package `@astrojs/prism`. Vous pouvez maintenant importer ce composant de `@astrojs/prism` comme suit :
 
 ```astro
 ---
@@ -167,76 +165,76 @@ import { Prism } from '@astrojs/prism';
 ---
 ```
 
-Since the `@astrojs/prism` package is still bundled with `astro` core, you won't need to install anything new, nor add Prism as an integration! However, note that we _do_ plan to extract `@astrojs/prism` (and Prism syntax highlighting in general) to a separate, installable package in the future. See [the `<Prism />` component API reference](/en/reference/api-reference#prism-) for more.
+Vu que le package `@astrojs/prism` est toujours intégré avec le coeur d'Astro, vous n'aurez pas besoin d'installer quoi que ce soit de nouveau, ni d'ajouter Prism comme une intégration ! Cependant, notez que nous nous engageons à extraire `@astrojs/prism` (et la coloration syntaxique en général) dans un package installable séparément. Voir [l'API de référence du composant `<Prism />`](/fr/reference/api-reference#prism-) pour plus de détails.
 
-### CSS Parser Upgrade
+### Mise à jour du parser CSS
 
-Our internal CSS parser has been updated, and comes with better support for advanced CSS syntax, like container queries. This should be a mostly invisible change for most users, but hopefully for advanced users will enjoy the new CSS feature support.
-## Migrate to v0.24
+Notre parser CSS interne a été mis à jour, et contient un meilleur support pour la syntaxe CSS avancée, comme les requêtes `@container`. Cela devrait être un changement invisible pour la plupart des utilisateurs, mais pour les utilisateurs avancés, ils pourraient bénéficier des nouvelles fonctionnalités CSS.
+## Migrer vers v0.24
 
-> The new build strategy is on by default on 0.24. If you run into a problem you can continue using the old build stategy by passing the `--legacy-build` flag. Please [open an issue](https://github.com/withastro/astro/issues/new/choose) so that we can resolve problems with the new build strategy.
+> La nouvelle stratégie de build maintenant utilisée est par défaut dans la version 0.24. Si vous rencontrez un problème, vous pouvez continuer à utiliser la stratégie de build antérieure en utilisant l'option `--legacy-build`. S'il vous plait, [ouvrez une issue GitHub](https://github.com/withastro/astro/issues/new/choose) pour que nous puissions résoudre les problèmes avec la nouvelle stratégie de build.
 
-0.24 introduced a new *static build* strategy that changes the behavior of a few features. In previous versions of Astro this was available behavior an opt-in flag: `--experimental-static-build`.
+0.24 ajoute une nouvelle stratégie de build statique qui modifie le comportement de certaines fonctionnalités. Dans les versions précédentes de Astro, cela était possible de l'activer avec l'option `--experimental-static-build`.
 
-To migrate for the transition, be aware of the following changes that will be required to move to this new build engine. You can make these changes to your codebase at any time so that you are ready ahead of schedule.
+Pour migrer vers cette nouvelle méthode de build, vous devez prendre connaissance des changements suivants qui vont être nécessaires pour utiliser ce nouveau moteur de rendu. Vous pouvez faire ces changements à votre code à tout moment pour que vous soyez en avance sur les changements.
 
-### Deprecated: Astro.resolve()
+### Obsolète : Astro.resolve()
 
-`Astro.resolve()` allows you to get resolved URLs to assets that you might want to reference in the browser. This was most commonly used inside of  `<link>` and `<img>` tags to load CSS files and images as needed. Unfortunately, this will no longer work due to Astro now building assets at *build time* rather than at *render time*. You'll want to upgrade your asset references to one of the following future-proof options available going forward:
+`Astro.resolve()` vous permet de récupérer des URL de ressources qui vous seront utiles dans le navigateur. Cela a été utilisé le plus souvent avec les balises `<link>` et `<img>` pour charger des fichiers CSS et images en fonction des besoin. Malheureusement, cela ne fonctionnera plus car Astro génère maintenant les ressources à *l'heure de build* plutôt qu'à *l'heure de rendu*. Vous aurez besoin de mettre à jour vos références vers l'une des options suivantes qui seront disponibles dans le futur :
 
-#### How to Resolve CSS Files
+#### Comment récupérer des fichiers CSS
 
-**1. ESM Import (Recommended)**
+**2. Importation ESM (Recommandé)**
 
-**Example:** `import './style.css';`
-**When to use this:** If your CSS file lives inside of the `src/` directory, and you want automatic CSS build and optimization features.
+**Exemple :** `import './style.css';`
+**Quand l'utiliser :** Si votre fichier CSS est situé dans le répertoire `src/`, et que vous souhaitez des fonctions de build et d'optimisation CSS automatiques.
 
-Use an ESM import to add some CSS onto the page. Astro detects these CSS imports and then builds, optimizes, and adds the CSS to the page automatically. This is the easiest way to migrate from `Astro.resolve()` while keeping the automatic building/bundling that Astro provides.
+Utilisez une importation ESM pour ajouter du CSS à la page. Astro détecte ces imports CSS et génère, optimise, et ajoute automatiquement les CSS à la page. C'est le moyen le plus facile de se séparer d'`Astro.resolve()` tandis que vous gardez les fonctions de build/bundling qu'Astro fournit.
 
 ```astro
 ---
-// Example: Astro will include and optimize this CSS for you automatically
+// Exemple : Astro incluera et optimisera automatiquement ce CSS pour vous
 import './style.css';
 ---
-<html><!-- Your page here --></html>
+<html><!-- Votre page ici --></html>
 ```
 
-Importing CSS files should work anywhere that ESM imports are supported, including:
-- JavaScript files
-- TypeScript files
-- Astro component front matter
-- non-Astro components like React, Svelte, and others
+Importer des fichiers CSS devrait fonctionner n'importe où les importations ESM soient supportées, incluant :
+- Fichiers JavaScript
+- Fichiers TypeScript
+- Le Front-matter d'un composant Astro
+- Les composants non-Astro comme React, Svelte, et d'autres
 
-When a CSS file is imported using this method, any `@import` statements are also resolved and inlined into the imported CSS file. All `url()` references are also resolved relative to the source file, and any `url()` referenced assets will be included in the final build.
-
-
-**2. Absolute URL Path**
-
-**Example:** `<link href="/style.css">`
-**When to use this:** If your CSS file lives inside of `public/`, and you prefer to create your HTML `link` element yourself.
-
-You can references any file inside of the `public/` directory by absolute URL path in your component template. This is a good option if you want to control the `<link>` tag on the page yourself. However, this approach also skips the CSS processing, bundling and optimizations that are provided by Astro when you use the `import` method described above.
-
-We recommend using the `import` approach over the abolute URL approach, since it provides the best possible CSS performance and features by default.
-
-#### How to Resolve JavaScript Files
+Quand un fichier CSS est importé avec cette méthode, tous les `@import` sont également résolus et inclus dans le fichier CSS importé. Toutes les références `url()` sont également résolues par rapport à la source du fichier, et toutes les ressources référencées par `url()` seront inclus dans le build final.
 
 
-**1. Absolute URL Path**
+**2. Chemin d'URL absolu**
 
-**Example:** `<script src="/some-external-script.js" />`
-**When to use this:** If your JavaScript file lives inside of `public/`.
+**Exemple :** `<link href="/style.css">`
+**Quand l'utiliser :** Si votre fichier CSS est situé dans `public/`, et que vous préférez créer votre élément `link` HTML vous-même.
 
-You can references any file inside of the `public/` directory by absolute URL path in your Astro component templates. This is a good default option for external scripts, because it lets you control the `<script >` tag on the page yourself.
+Vous pouvez référencer n'importe quel fichier dans le répertoire `public/` par un chemin d'URL absolu dans votre Template de composant. C'est une bonne option si vous souhaitez contrôler la balise `<link>` de la page par vous-même. Cependant, cette approche évite également le traitement, la compression et l'optimisation des CSS qui sont fournis par Astro lorsque vous utilisez la méthode d'import décrit ci-dessus.
 
-Note that this approach skips the JavaScript processing, bundling and optimizations that are provided by Astro when you use the `import` method described below. However, this may be preferred for any external scripts that have already been published and minified seperately from Astro. If your script was downloaded from an external source, then this method is probably preferred.
+Nous recommandons d'utiliser l'approche d'`import` par rapport à l'approche absolue, car elle fournit les meilleures performances CSS et les meilleures fonctionnalités par défaut.
 
-**2. ESM Import via `<script hoist>`**
+#### Comment récupérer des fichiers JavaScript
 
-**Example:** `<script hoist>import './some-external-script.js';</script>`
-**When to use this:** If your external script lives inside of `src/` _and_ it supports the ESM module type.
 
-Use an ESM import inside of a `<script hoist>` element in your Astro template, and Astro will include the JavaScript file in your final build. Astro detects these JavaScript client-side imports and then builds, optimizes, and adds the JavaScript to the page automatically. This is the easiest way to migrate from `Astro.resolve()` while keeping the automatic building/bundling that Astro provides.
+**1. Chemin d'URL absolu**
+
+**Exemple :** `<script src="/some-external-script.js" />`
+**Quand l'utiliser :** Si votre fichier JavaScript est situé dans `public/`.
+
+Vous pouvez référencer n'importe quel fichier dans le répertoire `public/` par un chemin d'URL absolu dans votre Template de composant. C'est une bonne option par défaut pour les scripts externes, car elle vous permet de contrôler la balise `<script>` de la page par vous-même.
+
+Notez que cette approche évite le traitement, la compression et l'optimisation du JavaScript qui sont fournis par Astro lorsque vous utilisez la méthode d'import décrit ci-dessous. Cependant, cela peut être préférable pour tous les scripts externes qui ont déjà été traités et minifiés séparément de Astro. Si votre script a été téléchargé depuis une source externe, alors cette méthode est probablement préférable.
+
+**2. Importation ESM via `<script hoist>`**
+
+**Exemple :** `<script hoist>import './some-external-script.js';</script>`
+**Quand l'utiliser :** Si votre script externe est situé dans `src/` _et_ il supporte l'importation par module ESM.
+
+Utilisez une importation ESM à l'interieur un élément `<script hoist>` dans votre Template de composant, et Astro incluera le fichier JavaScript dans votre build final. Astro détecte ces imports JavaScript côté client et les ajoute automatiquement à la page dans le build final. C'est la façon la plus facile de se passer de `Astro.resolve()` tout en gardant le build/bundling automatique que Astro fournit.
 
 ```astro
 <script hoist>
@@ -244,97 +242,97 @@ Use an ESM import inside of a `<script hoist>` element in your Astro template, a
 </script>
 ```
 
-Note that Astro will bundle this external script with the rest of your client-side JavaScript, and load it in the `type="module"` script context. Some older JavaScript files may not be written for the `module` context, in which case they may need to be updated to use this method.
+Notez que Astro va bundler ce script externe avec le reste de votre JavaScript côté client, et le charger dans le contexte de script `type="module"`. Certains fichiers JavaScript peuvent ne pas être écrits pour supporter le contexte `module`, dans ce cas ils devrons être mis à jour pour pouvoir utiliser cette méthode.
 
-#### How to Resolve Images & Other Assets
+#### Comment récupérer des images et autres ressources
 
-**1. Absolute URL Path (Recommended)**
+**1. Chemin d'URL absolu (Recommandé)**
 
-**Example:** `<img src="/penguin.png">`
-**When to use this:** If your asset lives inside of `public/`.
+**Exemple :** `<img src="/penguin.png">`
+**Quand l'utiliser :** Si votre ressource est située dans `public/`.
 
-If you place your images inside of `public/` you can safely reference them by absolute URL path directly in your component templates. This is the simplest way to reference an asset that you can use today, and it is recommended for most users who are getting started with Astro.
+Si vous placez vos images dans `public/`, vous pouvez référencer les images par un chemin d'URL absolu directement dans vos Templates de composants. C'est la façon la plus simple de référencer une ressource que vous pouvez utiliser dès aujourd'hui, cette méthode est recommandé pour la plupart des utilisateurs qui sont en train de commencer à utiliser Astro.
 
-**2. ESM Import**
+**2. Importation ESM**
 
-**Example:** `import imgUrl from './penguin.png'`
-**When to use this:** If your asset lives inside of the `src/` directory, and you want automatic optimization features like filename hashing.
+**Exemple :** `import imgUrl from './penguin.png'`
+**Quand l'utiliser :** Si votre ressource est située dans le répertoire `src/` et que vous souhaitez des fonctionnalités d'optimisation automatique comme le hachage des noms de fichiers.
 
-This works inside of any JavaScript or Astro component, and returns a resolved URL to the final image. Once you have the resolved URL, you can use it anywhere inside of the component template.
+Cette fonctionnalité fonctionne à l'intérieur de n'importe quel JavaScript ou composant Astro, et renvoie une URL résolue vers l'image finale. Une fois que vous avez l'URL résolue, vous pouvez l'utiliser n'importe où dans votre Template de composant.
 
 ```astro
 ---
-// Example: Astro will include this image file in your final build
+// Exemple : Astro incluera cette image dans votre build final
 import imgUrl from './penguin.png';
 ---
 <img src={imgUrl} />
 ```
 
-Similar to how Astro handles CSS, the ESM import allows Astro to perform some simple build optimizations for you automatically. For example, any asset inside of `src/` that is imported using an ESM import (ex: `import imgUrl from './penguin.png'`) will have its filename hashed automatically. This can let you cache the file more aggressively on the server, improving user performance. In the future, Astro may add more optimizations like this.
+Similaire à la façon dont Astro gère les CSS, l'importation ESM permet à Astro de faire des optimisations simples pour vous automatiquement. Par exemple, n'importe quelle ressource située dans `src/` qui est importée via une importation ESM (ex: `import imgUrl from './penguin.png'`) aura son nom de fichier haché automatiquement. Cela peut vous permettre de mieux mettre en cache le fichier sur le serveur, améliorant la performance de l'utilisateur. Dans le futur, Astro pourra ajouter d'autres optimisations comme cela.
 
-**Tip:** If you dislike static ESM imports, Astro also supports dynamic ESM imports. We only recommend this option if you prefer this syntax: `<img src={(await import('./penguin.png')).default} />`.
+**Astuce :** Si vous n'aimez pas les imports ESM statiques, Astro supporte également des imports ESM dynamiques. Nous recommandons cette option uniquement si vous préférez cette syntaxe : `<img src={(await import('./penguin.png')).default} />`.
 
-### Deprecated: `<script>` Default Processing
+### Obsolète : traitement par défaut des balises `<script>`
 
-Previously, all `<script>` elements were read from the final HTML output and processed + bundled automatically. This behavior is no longer the default. Starting in 0.24, you must opt-in to `<script>` element processing via the `hoist` attribute. The `type="module"` is also required for hoisted modules.
+Précédemment, toutes les balises `<script>` étaient lues, traitées automatiquement et compressées. Cette fonctionnalité n'est plus la valeur par défaut. Depuis la version 0.24, vous devez activer manuellement le traitement des balises `<script>` via l'attribut `hoist`. Le `type="module"` est également requis pour les modules hoistés.
 
 ```astro
 <script>
-  // Will be rendered into the HTML exactly as written!
-  // ESM imports will not be resolved relative to the file.
+  // Sera rendu exactement comme il est écrit !
+  // Les imports ESM ne seront pas résolus par rapport au fichier.
 </script>
 <script type="module" hoist>
-  // Processed! Bundled! ESM imports work, even to npm packages.
+  // Traité ! Compressé ! Les importations ESM fonctionnent, même pour les packages npm.
 </script>
 ```
 
 
-## Migrate to v0.23
+## Migrer vers v0.23
 
-### Missing Sass Error
+### L'erreur `"sass" not found`
 
 ```
 Preprocessor dependency "sass" not found. Did you install it?
 ```
 
-In our quest to reduce npm install size, we've moved [Sass](https://sass-lang.com/) out to an optional dependency. If you use Sass in your project, you'll want to make sure that you run `npm install sass --save-dev` to save it as a dependency.
+Dans notre quête de réduire la taille d'installation sur npm, nous avons déplacé [Sass](https://sass-lang.com/) hors du projet, dans une dépendance optionnelle. Si vous utilisez Sass dans votre projet, vous devez vérifier que avez bien fait la commande `npm install sass --save-dev` pour la sauvegarder comme une dépendance.
 
-### Deprecated: Unescaped HTML
+### Obsolète : HTML non échappé
 
-In Astro v0.23+, unescaped HTML content in expressions is now deprecated.
-In future releases, content within expressions will have strings escaped to protect against unintended HTML injection.
+Dans la version 0.23 et plus, le contenu HTML non échappé dans les expressions est maintenant obsolète.
+Dans les prochaines versions, le contenu dans les expressions sera échappé afin de protéger contre les injections HTML non désirées.
 
 ```diff
 - <h1>{title}</h1> <!-- <h1>Hello <strong>World</strong></h1> -->
 + <h1>{title}</h1> <!-- <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
 ```
 
-To continue injecting unescaped HTML, you can now use `set:html`.
+Pour continuer à injecter du HTML non échappé, vous pouvez maintenant utiliser `set:html`.
 
 ```diff
 - <h1>{title}</h1>
 + <h1 set:html={title} />
 ```
 
-To avoid a wrapper element, `set:html` can work alongside `<Fragment>`.
+Pour éviter un élément conteneur, `set:html` peut fonctionner avec les balises `<Fragment>`.
 
 ```diff
 - <h1>{title}!</h1>
 + <h1><Fragment set:html={title}>!</h1>
 ```
 
-You can also protect against unintended HTML injection with `set:text`.
+Vous pouvez également protéger contre les injections HTML non désirées avec `set:text`.
 
 ```astro
 <h1 set:text={title} /> <!-- <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
 ```
 
-## Migrate to v0.21
+## Migrer vers v0.21
 
 ### Vite
 
-Starting in v0.21, Astro is built with [Vite].
-As a result, configurations written in `snowpack.config.mjs` should be moved into `astro.config.mjs`.
+À partir de la version 0.21, Astro est maintenant construit avec [Vite].
+Par extension, les configurations écrites dans `snowpack.config.mjs` devraient être déplacées dans `astro.config.mjs`.
 
 ```js
 // @ts-check
@@ -348,11 +346,11 @@ export default {
 };
 ```
 
-To learn more about configuring Vite, please visit their [configuration guide](https://vitejs.dev/config/).
+Pour en savoir plus sur la configuration de Vite, veuillez visiter leur [guide de configuration](https://vitejs.dev/config/).
 
-#### Vite Plugins
+#### Plugins Vite
 
-In Astro v0.21+, Vite plugins may be configured within `astro.config.mjs`.
+Dans la version 0.21 et plus, les plugins Vite peuvent être configurés dans `astro.config.mjs`.
 
 ```js
 import { imagetools } from 'vite-imagetools';
@@ -364,11 +362,11 @@ export default {
 };
 ```
 
-To learn more about Vite plugins, please visit their [plugin guide](https://vitejs.dev/guide/using-plugins.html).
+Pour en savoir plus sur les plugins Vite, veuillez visiter leur [guide](https://vitejs.dev/guide/using-plugins.html).
 
-#### Vite Changes to Renderers
+#### Changements vers Vite pour les `Renderers`
 
-In Astro v0.21+, plugins should now use `viteConfig()`.
+Dans la version 0.21 et plus, les plugins devraient maintenant utiliser `viteConfig()`.
 
 ```diff
 // renderer-svelte/index.js
@@ -397,14 +395,14 @@ export default {
 }
 ```
 
-To learn more about Vite plugins, please visit their [plugin guide](https://vitejs.dev/guide/using-plugins.html).
+Pour en savoir plus sur les plugins Vite, veuillez visiter leur [guide](https://vitejs.dev/guide/using-plugins.html).
 
-> In prior releases, these were configured with `snowpackPlugin` or `snowpackPluginOptions`.
+> Dans les versions précédentes, ces configurations étaient configurées avec `snowpackPlugin` ou `snowpackPluginOptions`.
 
 
-### Aliasing
+### Alias de chemins
 
-In Astro v0.21+, import aliases can be added from `tsconfig.json` or `jsconfig.json`.
+Dans la version 0.21 et plus, les alias d'importation peuvent être ajoutés depuis `tsconfig.json` ou `jsconfig.json`.
 
 ```json
 {
@@ -417,39 +415,39 @@ In Astro v0.21+, import aliases can be added from `tsconfig.json` or `jsconfig.j
 }
 ```
 
-_These aliases are integrated automatically into [VSCode](https://code.visualstudio.com/docs/languages/jsconfig) and other editors._
+_Ces alias sont intégrés automatiquement dans [VSCode](https://code.visualstudio.com/docs/languages/jsconfig) et d'autres éditeurs._
 
-### File Extensions in Imports
+### Extensions de fichiers dans les imports
 
-In Astro v0.21+, files need to be referenced by their actual extension, exactly as it is on disk. In this example, `Div.tsx` would need to be referenced as `Div.tsx`, not `Div.jsx`.
+Dans la version 0.21 et plus, les fichiers doivent être référencés par leur extension exacte, exactement comme ils sonts sur le disque. Dans cet exemple, `Div.tsx` devra être référencé comme `Div.tsx`, pas `Div.jsx`.
 
 ```diff
 - import Div from './Div.jsx' // Astro v0.20
 + import Div from './Div.tsx' // Astro v0.21
 ```
 
-This same change applies to a compile-to-css file like `Div.scss`:
+Ce même changement s'applique à un fichier compilé en css comme `Div.scss`:
 
 ```diff
 - <link rel="stylesheet" href={Astro.resolve('./Div.css')}>
 + <link rel="stylesheet" href={Astro.resolve('./Div.scss')}>
 ```
 
-### Removed: Components in Frontmatter
+### Supprimé: Composants dans le Front-matter
 
-Previously, you could create mini Astro Components inside of the Astro Frontmatter, using JSX syntax instead of Astro’s component syntax. This was always a bit of a hack, but in the new compiler it became impossible to support. We hope to re-introduce this feature in a future release of Astro using a different, non-JSX API.
+Précédemment, vous pouviez créer des mini-Composants Astro dans le Front-matter de Astro, en utilisant la syntaxe JSX au lieu de la syntaxe de composant Astro. C'était toujours un peu comme un hack, mais dans le nouveau compilateur, nous devient impossible de le supporter. Nous espérons réintroduire cette fonctionnalité dans une future version de Astro en utilisant une autre API non-JSX.
 
-To migrate to v0.21+, please convert all JSX Astro components (that is, any Astro components created inside of another component’s frontmatter) to standalone components.
+Pour migrer vers la version 0.21 et plus, veuillez convertir tous les composants JSX Astro (ce qui signifie tous les composants Astro créés dans le Front-matter d'un autre composant) en des composants dédiés.
 
 
-### Styling Changes
+### Changements de style
 
 #### Autoprefixer
 
-Autoprefixer is no longer run by default. To enable:
+Autoprefixer n'est plus utilisé par défaut. Pour l'activer:
 
-1. Install the latest version (`npm i autoprefixer`)
-2. Create a `postcss.config.cjs` file at the root of your project with:
+1. Installer la dernière version (`npm i autoprefixer`)
+2. Créez un fichier `postcss.config.cjs` à la racine de votre projet avec :
    ```js
    module.exports = {
      plugins: {
@@ -460,10 +458,10 @@ Autoprefixer is no longer run by default. To enable:
 
 #### Tailwind CSS
 
-Ensure you have PostCSS installed. This was optional in previous releases, but is required now:
+Veuillez vous assurer que PostCSS est installé. Cela était optionnel dans les versions précédentes, mais est requis maintenant :
 
-1. Install the latest version of postcss (`npm i -D postcss`)
-2. Create a `postcss.config.cjs` file at the root of your project with:
+1. Installer la dernière version de postcss (`npm i -D postcss`)
+2. Créez un fichier `postcss.config.cjs` à la racine de votre projet avec :
    ```js
    module.exports = {
      plugins: {
@@ -471,14 +469,14 @@ Ensure you have PostCSS installed. This was optional in previous releases, but i
      },
    };
    ```
-   For more information, read the [Tailwind CSS documentation](https://tailwindcss.com/docs/installation#add-tailwind-as-a-post-css-plugin)
+   Pour plus d'information, lisez la [documentation de Tailwind CSS](https://tailwindcss.com/docs/installation#add-tailwind-as-a-post-css-plugin)
 
 
-### Known Issues
+### Problèmes connus
 
-#### Imports on top
+#### Priorités des imports
 
-In Astro v0.21+, a bug has been introduced that requires imports inside components to be at the top of your front matter.
+Dans la version 0.21 et plus, un bug a été introduit qui exige que les imports dans les composants soient au début de votre Front-matter.
 
 ```astro
 ---
