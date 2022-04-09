@@ -94,7 +94,7 @@ Un exemple d'`content` d'article de blog pourrait ressembler à ça :
       }
       /* ... */
     ],
-    "source": "# Version 0.18 d'Astro\\nIl y a un peu plus d'un mois, la première bêta publique [...]"
+    "source": "# Version 0.18 d'Astro\nIl y a un peu plus d'un mois, la première bêta publique [...]"
   },
   "url": ""
 }
