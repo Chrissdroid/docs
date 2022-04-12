@@ -191,6 +191,46 @@ Vue Astro supporte les mêmes méthodes que `vue-loader` :
 
 Svelte fonctionne aussi à la perfection dans Astro : [Documentation de Style sur Svelte][svelte-style].
 
+## Avancé
+
+> ⚠️ATTENTION⚠️ :
+> Soyez vigilant lorsque vous ignorez la compression du CSS intégré à Astro. Les styles ne seront pas automatiquement inclus dans le code généré, et vous devez vous assurer que le fichier référencé est bien inclus dans la sortie finale.
+
+### Importations CSS `?raw`
+
+Pour certain cas spécifiques, il est possible d'importer directement du CSS depuis le disque sans qu'il soit compressé ou optimisé par Astro. Cela peut être utile lorsque vous avez besoin d'un contrôle total sur votre CSS, et que vous avez besoin d'ignorer le traitement automatique du CSS par Astro.
+
+Ceci n'est pas recommandé pour la plupart des utilisateurs.
+
+```astro
+---
+// Exemple avancé ! Non-recommandé pour la plupart des utilisateurs.
+import rawStylesCSS from '../styles/main.css?raw';
+---
+<style is:inline set:html={rawStylesCSS}></style>
+```
+
+Voir la [documentation de Vite](https://vitejs.dev/guide/assets.html#importing-asset-as-url) pour plus de détails.
+### Importations CSS `?url`
+
+Dans certain cas spécifiques, vous pouvez importer une référence directe URL pour un fichier CSS dans le répertoire `src/` de votre projet. Cela peut être utile lorsque vous avez besoin d'un contrôle total sur la manière dont un fichier CSS est chargé sur la page. Cependant, cela empêchera la compression de ce fichier avec les autres styles sur page.
+
+Ceci n'est pas recommandé pour la plupart des utilisateurs. À la place, mettez vos fichiers CSS dans le dossier `public/` pour obtenir une référence URL consistente.
+
+> ⚠️ATTENTION⚠️ :
+> Importer un fichier CSS minime avec `?url` peut renvoyer son contenus CSS encodés en base64 en temps qu'URL, mais uniquement en production. Vous devrez écrire votre code pour supporter les URL de données (`data:text/css;base64,...`) ou alors définir l'option [`vite.build.assetsInlineLimit`](https://vitejs.dev/config/#build-assetsinlinelimit) à `0` pour désactiver cette fonctionnalité.
+```astro
+---
+// Exemple avancé ! Non-recommandé pour la plupart des utilisateurs.
+import stylesUrl from '../styles/main.css?url';
+---
+<link rel="preload" href={sytylesUrl} as="style">
+<link rel="stylesheet" href={stylesUrl}>
+```
+
+Voir la [documentation de Vite](https://vitejs.dev/guide/assets.html#importing-asset-as-url) pour plus de détails.
+
+
 [less]: https://lesscss.org/
 [sass]: https://sass-lang.com/
 [stylus]: https://stylus-lang.com/
