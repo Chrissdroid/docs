@@ -6,7 +6,13 @@ description: Comment migrer votre projet vers la dernière version de Astro.
 
 Ce guide existe pour vous aider à migrer vers la dernière version de Astro et à garder votre code à jour.
 
-Alors que nous essayons de garder les changements de versions à faible niveau, nous nous attendons à quelques changements majeurs avant que nous atteignions la version 1.0. Lisez le guide ci-dessous pour voir les modifications majeures et les instructions pour mettre à jour vers cette version.
+Ce guide existe pour les utilisateurs des versions d'Astro inférieures à v1.0.0-beta.0. Nous n'avons pas prévu de changements de versions entre v1.0.0-beta.0 et v1.0.0 (planifié pour le 8 juin 2022).
+
+Lisez le guide ci-dessous pour voir les points importants et des instructions pour mettre à jour votre code.
+
+## Migrer vers v1.0.0-beta.0
+
+La version `v1.0.0-beta.0` de Astro n'a pas de changements importants, mais veuillez vérifier par sécurité que vous avez suivi le [guide vers la version 0.26](#migrer-vers-v026).
 
 ## Migrer vers v0.26
 ### Nouvelle API de Configuration
