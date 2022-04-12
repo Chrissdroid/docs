@@ -37,10 +37,10 @@ Les styles portés ne s'appliquent pas à d'autres composants Astro contenus dan
 
 #### Styles globaux
 
-Comme nous recommandons les styles portés pour la plupart des composants, vous pourriez éventuellement trouver une raison valide de écrire du CSS global, non porté. Vous pouvez désactiver l'encapsulation automatique de CSS avec l'attribut `<style global>`.
+Comme nous recommandons les styles portés pour la plupart des composants, vous pourriez éventuellement trouver une raison valide de écrire du CSS global, non porté. Vous pouvez désactiver l'encapsulation automatique de CSS avec l'attribut `<style is:global>`.
 
 ```html
-<style global>
+<style is:global>
   /* Non porté, livré directement au navigateur.
      S'applique à tous les <h1> dans votre site. */
   h1 { color: red; }
