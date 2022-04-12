@@ -63,19 +63,19 @@ Les routes peuvent être générées à partir de plusieurs paramètres nommés,
 - `pages/[username]/settings.astro` → (`/fred/settings`, `/drew/settings`, etc.)
 - `pages/[lang]-[version]/info.astro` → (`/en-v1/info`, `/fr-v2/info`, etc.)
 
-#### L'objet `Astro.request.params`
+#### L'objet `Astro.params`
 
-Les composants Astro qui génèrent des routes dynamiques ont accès à un objet `Astro.request.params` pour chaque route. Cela permet d'utiliser ces parties de l'URL générée dans votre script et le template.
+Les composants Astro qui génèrent des routes dynamiques ont accès à un objet `Astro.params` pour chaque route. Cela permet d'utiliser ces parties de l'URL générée dans votre script et le template.
 
 ```astro
 ---
 // Example: src/pages/posts/[id].astro
-const { id } = Astro.request.params;
+const { id } = Astro.params;
 ---
 <p>Article : { id }</p>
 
 
-// L'objet Astro.request.params passé par la route `/post/abc`
+// L'objet Astro.params passé par la route `/post/abc`
 { "id": "abc" }
 ```
 
@@ -84,10 +84,10 @@ Des multiples segments de route dynamiques peuvent être combinés pour fonction
 ```astro
 ---
 // Example: src/pages/post/[id]/[comment].astro
-const { id, comment } = Astro.request.params;
+const { id, comment } = Astro.params;
 ---
 
-// L'objet Astro.request.params passé par la route `/post/abc/a-comment`
+// L'objet Astro.params passé par la route `/post/abc/a-comment`
 { "id": "abc", "comment": "a-comment" }
 ```
 
@@ -102,7 +102,7 @@ Par exemple :
 Les paramètres correspondants seront passés en tant que paramètre de requête (`slug` dans cet exemple) à la page.
 
 ```json
-// L'objet Astro.request.params passé pour la route `/post/a/b/c`
+// L'objet Astro.params passé pour la route `/post/a/b/c`
 { "slug": "a/b/c" }
 ```
 
@@ -254,5 +254,5 @@ export function getStaticPaths({paginate}) {
   });
 }
 const { page } = Astro.props;
-const { params } = Astro.request;
+const params = Astro.params;
 ```
