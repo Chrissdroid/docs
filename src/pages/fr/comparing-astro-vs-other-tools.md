@@ -268,7 +268,7 @@ La syntaxe de composant Astro est une surcouche de l'HTML. Elle a été conçue 
 | Attributs conditionnels              | `autocomplete` === `autocomplete={true}` | `autocomplete` === `autocomplete={true}` |
 | Fonctions inter-lignes               | `{items.map(item => <li>{item}</li>)}`  | `{items.map(item => <li>{item}</li>)}` |
 | Affichage conditionnel               | `{condition && <p>texte<p>}`  | `{condition && <p>texte<p>}` |
-| Supports d'éditeur de code           | [VS Code][code-ext] | Phénoménal |
+| Supports d'éditeur de code           | [VS Code (Open VSX inclus), Nova](/fr/editor-setup) | Phénoménal |
 | Demande une importation JS           | Non | Oui, `jsxPragma` (`React` ou `h`) doit être dans la portée du code |
 | Fragments                            | Niveau global automatique, `<Fragment>` ou `<>` dans les fonctions | Entourer d'un `<Fragment>` ou d'un `<>` |
 | Frameworks multiples par page        | Oui | Non |
@@ -276,5 +276,3 @@ La syntaxe de composant Astro est une surcouche de l'HTML. Elle a été conçue 
 | Style des commentaires               | `<!-- HTML -->` | `{/_ JavaScript _/}`  |
 | Caractères spéciaux                  | `&nbsp;`  | `&nbsp;`  |
 | Attributs                            | `dash-case` | `camelCase`|
-
-[code-ext]: https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode
