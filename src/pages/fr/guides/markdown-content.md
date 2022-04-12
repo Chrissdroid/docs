@@ -283,12 +283,7 @@ Le paquet `@astrojs/markdown-remark` est inclus par défaut avec les plugins sui
 // astro.config.mjs
 export default {
   markdown: {
-    render: [
-      'parser-name', // ou import('parser-name') ou alors (contents) => {...}
-      {
-        // options
-      },
-    ],
+    // ...
   },
 };
 ```
@@ -309,21 +304,16 @@ Astro supporte des plugins Markdown de la part des autres développeurs. Vous po
 // astro.config.mjs
 export default {
   markdown: {
-    render: [
-      '@astrojs/markdown-remark',
-      {
-        remarkPlugins: [
-          // Ajoutez un plugin Remark que vous souhaitez activer pour votre projet.
-          // Si vous avez besoin d'options pour le plugin, vous pouvez utiliser un tableau et mettre les options en tant que deuxième élément.
-          // ['remark-autolink-headings', { behavior: 'prepend'}],
-        ],
-        rehypePlugins: [
-          // Ajoutez un plugin Rehype que vous souhaitez activer pour votre projet.
-          // Si vous avez besoin d'options pour le plugin, vous pouvez utiliser un tableau et mettre les options en tant que deuxième élément.
-          // 'rehype-slug',
-          // ['rehype-autolink-headings', { behavior: 'prepend'}],
-        ],
-      },
+    remarkPlugins: [
+      // Ajoutez un plugin Remark que vous souhaitez activer pour votre projet.
+      // Si vous avez besoin d'options pour le plugin, vous pouvez utiliser un tableau et mettre les options en tant que deuxième élément.
+      // ['remark-autolink-headings', { behavior: 'prepend'}],
+    ],
+    rehypePlugins: [
+      // Ajoutez un plugin Rehype que vous souhaitez activer pour votre projet.
+      // Si vous avez besoin d'options pour le plugin, vous pouvez utiliser un tableau et mettre les options en tant que deuxième élément.
+      // 'rehype-slug',
+      // ['rehype-autolink-headings', { behavior: 'prepend'}],
     ],
   },
 };
@@ -337,12 +327,7 @@ import autolinkHeadings from 'remark-autolink-headings';
 
 export default {
   markdown: {
-    render: [
-      '@astrojs/markdown-remark',
-      {
-        remarkPlugins: [[autolinkHeadings, { behavior: 'prepend' }]],
-      },
-    ],
+    remarkPlugins: [[autolinkHeadings, { behavior: 'prepend' }]],
   },
 };
 ```
@@ -379,21 +364,16 @@ Lorsque vous utilisez Shiki, vous configurez toutes les options via l'objet de c
 // astro.config.mjs
 export default {
   markdown: {
-    render: [
-      '@astrojs/markdown-remark',
-      {
-        shikiConfig: {
-          // Choisir parmi les thèmes de Shiki
-          // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
-          theme: 'dracula',
-          // Spécifier manuellement les langues
-          // Note : Shiki a de nombreuses langues pré-intégrées, y compris .astro !
-          langs: ['astro'],
-          // Activer le retour à la ligne pour éviter le défilement horizontal
-          wrap: true,
-        },
-      },
-    ],
+    shikiConfig: {
+      // Choisir parmi les thèmes de Shiki
+      // https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes
+      theme: 'dracula',
+      // Spécifier manuellement les langues
+      // Note : Shiki a de nombreuses langues pré-intégrées, y compris .astro !
+      langs: ['astro'],
+      // Activer le retour à la ligne pour éviter le défilement horizontal
+      wrap: true,
+    },
   },
 };
 ```
