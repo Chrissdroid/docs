@@ -335,6 +335,8 @@ Pour envoyer du JavaScript au navigateur sans utiliser un [composant de framewor
 </script>
 ```
 
+📚 Jetez un oeil à notre [référence de directives](/fr/reference/directives-reference#balises-script-et-style) pour plus d'informations sur les directives disponibles sur les balises `<script>`.
+
 #### Chargement de scripts externes
 
 **Quand utiliser cette fonctionnalité :** Si votre fichier JavaScript se trouve dans `public/`.

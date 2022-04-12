@@ -182,9 +182,9 @@ export const SIDEBAR = {
 		{ text: 'Alias d\'Importation', link: 'fr/guides/aliases' },
 		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
 		{ text: 'Flux RSS', link: 'fr/guides/rss' },
+		{ text: 'Interprétation côté serveur (SSR)', link: 'fr/guides/server-side-rendering' },
 		{ text: 'TypeScript', link: 'fr/guides/typescript' },
 		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
-		{ text: 'Affichage côté serveur (expérimental)', link: 'fr/guides/server-side-rendering' },
 
 		{ text: 'Références', header: true, type: 'api' },
 		{
@@ -192,13 +192,12 @@ export const SIDEBAR = {
 			// Links to the configuration reference are not yet available in other languages, redirecting to the english docs instead.
 			link: 'en/reference/configuration-reference',
 		},
-		// Comment out the following line when the directive PR (withastro#282) is merged
-		// { text: '[WIP] Directives', link: 'fr/reference/directives-reference' },
 		{ text: 'Lignes de Commandes', link: 'fr/reference/cli-reference' },
 		{ text: 'API d\'Exécution', link: 'fr/reference/api-reference' },
 		{ text: 'API d\'Intégration', link: 'fr/reference/integrations-reference' },
 		{ text: 'API des adaptateurs (expérimental)', link: 'fr/reference/adapter-reference' },
 		{ text: 'Règles de Routage', link: 'fr/core-concepts/routing' },
+		{ text: 'Utilisation des Directives', link: 'fr/reference/directives-reference' },
 		{ text: 'Format de Packet NPM', link: 'fr/guides/publish-to-npm' },
 	],
 	bn: [

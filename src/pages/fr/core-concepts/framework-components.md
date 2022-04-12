@@ -79,41 +79,9 @@ import InteractiveCounter from '../components/InteractiveCounter.jsx';
 
 ### Directives d'hydratation disponibles
 
-#### `client:load`
+Il y a plusieurs directives d'hydratation disponibles pour les composants de framework : `client:load`, `client:idle`, `client:visible`, `client:media={QUERY}` et `client:only=" "`.
 
-Commence à importer le JS du composant au chargement de la page.
-
-💡 *Utile pour des éléments d'interface immédiatement visible qui doivent être interactifs dès le début.*
-
-#### `client:idle`
-
-Commence à importer le JS du composant dès que le thread principal est libre.
-
-💡 *Utile pour les éléments qui n'ont pas besoin d'être immédiatement interactifs.*
-
-#### `client:visible`
-
-Commence à importer le JS du composant dès que l'élément entre dans la zone de visuelle du navigateur.
-
-💡 *Utile pour le contenu plus bas sur la page.*
-
-#### `client:media={QUERY}`
-
-Commence à importer le JS du composant dès que le navigateur correspond à la requête média donnée.
-
-💡 *Utile pour les interrupteurs de sidebar, ou d'autres éléments qui pourraient être utilisés uniquement pour certaines tailles d'écran.*
-
-> ⚠️ N'oubliez pas que cette directive ne définit que le composant *interactif* à certaines requêtes média. Cela n'affecte pas le composant *rendu à l'écran*, ni sa *visibilité* !
-
-#### `client:only=" "`
-
-Commence à importer le JS du composant au chargement de la page, similaire à `client:load`.
-
->⚠️ Ce composant sera **ignoré** à la compilation, et pour aider le client, vous devriez spécifier quel renderer utiliser dans l'array dans votre [configuration `astro.config.mjs`](/fr/reference/configuration-reference).
->
-> e.g. `<client:only="react" />` ou `<client:only="my-custom-renderer" />`
-
-💡 *Utile pour les composants qui sont entièrement dépendants des APIs côté client.*
+📚 Allez voir notre [page de référence des directives](/fr/reference/directives-reference#composants-de-frameworks) pour une description complète de ces directives, et de leur utilisation.
 
 ## Mixer des frameworks
 
