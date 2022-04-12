@@ -282,7 +282,7 @@ Le paquet `@astrojs/markdown-remark` est inclus par défaut avec les plugins sui
 ```js
 // astro.config.mjs
 export default {
-  markdownOptions: {
+  markdown: {
     render: [
       'parser-name', // ou import('parser-name') ou alors (contents) => {...}
       {
@@ -308,7 +308,7 @@ Astro supporte des plugins Markdown de la part des autres développeurs. Vous po
 ```js
 // astro.config.mjs
 export default {
-  markdownOptions: {
+  markdown: {
     render: [
       '@astrojs/markdown-remark',
       {
@@ -336,7 +336,7 @@ Vous pouvez aussi fournir des noms de plugins pour les importer :
 import autolinkHeadings from 'remark-autolink-headings';
 
 export default {
-  markdownOptions: {
+  markdown: {
     render: [
       '@astrojs/markdown-remark',
       {
@@ -378,7 +378,7 @@ Lorsque vous utilisez Shiki, vous configurez toutes les options via l'objet de c
 ```js
 // astro.config.mjs
 export default {
-  markdownOptions: {
+  markdown: {
     render: [
       '@astrojs/markdown-remark',
       {
