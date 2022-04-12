@@ -105,7 +105,7 @@ L'[URL canonique][canonical] de la page actuelle. Si l'option `site` est défini
 
 ### `Astro.site`
 
-`Astro.site` retourne une `URL` créée à partir de `buildOptions.site` dans votre configuration Astro. Si égal à `undefined`, il retournera une URL générée à partir de `localhost`.
+`Astro.site` retourne une `URL` créée à partir de la valeur `site` dans votre configuration d'Astro. Si égal à `undefined`, il retournera une URL générée à partir de `localhost`.
 
 ```astro
 ---
