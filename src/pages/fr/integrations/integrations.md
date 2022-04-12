@@ -15,6 +15,8 @@ Voici quelques sites déployés, des dépôts, des articles de blog et des vidé
 
 [Replicant Band](https://replicant.band) - Astro / GraphCMS / Snipcart / Tailwind
 
+[Design Buddy](https://design-buddy.netlify.app) - Astro / Tailwind / React / Cloudinary
+
 [Spread Bagelry](https://spreadbagelry.com) - Astro / Vue / Tailwind / Strapi CMS / Cloudinary
 
 [Public Transport Forum New Zealand](https://publictransportforum.nz/articles) - Astro / Netlify CMS
