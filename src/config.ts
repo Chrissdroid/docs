@@ -182,6 +182,7 @@ export const SIDEBAR = {
 		{ text: 'Alias d\'Importation', link: 'fr/guides/aliases' },
 		{ text: 'Intégrations', link: 'fr/guides/integrations-guide' },
 		{ text: 'Flux RSS', link: 'fr/guides/rss' },
+		{ text: 'TypeScript', link: 'fr/guides/typescript' },
 		{ text: 'Composants de Frameworks', link: 'fr/core-concepts/framework-components' },
 		{ text: 'Affichage côté serveur (expérimental)', link: 'fr/guides/server-side-rendering' },
 
