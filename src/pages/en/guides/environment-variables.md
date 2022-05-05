@@ -6,7 +6,7 @@ setup: |
   import ImportMetaEnv from '~/components/ImportMetaEnv.astro';
 ---
 
-Astro uses Vite for environment variables, and allows you to use any of its methods to get and set environment variables. 
+Astro uses Vite for environment variables, and allows you to [use any of its methods](https://vitejs.dev/guide/env-and-mode.html) to get and set environment variables.
 
 Note that while _all_ environment variables are available in server-side code, only environment variables prefixed with `PUBLIC_` are available in client-side code for security purposes.
 
@@ -16,8 +16,23 @@ See the official [Environment Variables example](https://github.com/withastro/as
 SECRET_PASSWORD=password123
 PUBLIC_ANYBODY=there
 ```
+<p>
+In this example, <code>PUBLIC_ANYBODY</code> (accessible via <ImportMetaEnv path=".PUBLIC_ANYBODY" />) will be available in server or client code, while <code>SECRET_PASSWORD</code> (accessible via <ImportMetaEnv path=".SECRET_PASSWORD" />) will be server-side only.
+</p>
 
-In this example, `PUBLIC_ANYBODY` will be available in server or client code, while `SECRET_PASSWORD` will not.
+## Default environment Variables
+
+Astro includes a few environment variables out-of-the-box:
+<ul>
+<li> <ImportMetaEnv path=".MODE" /> (<code>development</code> | <code>production</code>): the mode your site is running in. This is <code>development</code> when running <code>astro dev</code> and <code>production</code> when running <code>astro build</code>.</li>
+
+<li> <ImportMetaEnv path=".BASE_URL" /> (<code>string</code>): the base url your site is being served from. This is determined by the [base config option](/en/reference/configuration-reference/#base).</li>
+
+<li> <ImportMetaEnv path=".PROD" /> (<code>boolean</code>): whether your site is running in production.</li>
+
+<li> <ImportMetaEnv path=".DEV" /> (<code>boolean</code>): whether your site is running in development (always the opposite of <ImportMetaEnv path=".PROD" />).</li>
+<li><ImportMetaEnv path=".SITE" /> (<code>string</code>): <a href="/en/reference/configuration-reference/#site">The <code>site</code> option</a> specified in your project's <code>astro.config</code>.</li>
+</ul>
 
 ## Setting environment variables
 
