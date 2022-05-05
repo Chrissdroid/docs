@@ -295,7 +295,7 @@ Utilisez un attribut `slot="my-slot"` sur l'élément enfant que vous voulez pas
 
 #### Contenu de remplacement pour les emplacements
 
-Les emplacements peuvent aussi afficher des **contenus de remplacement**. Quand il n'y a pas d'enfants correspondants passés à un `<slot>`, un élément `<slot>` affichera ses propres enfants.
+Les emplacements peuvent aussi afficher des **contenus de remplacement**. Quand il n'y a pas d'enfants correspondants passés à un emplacement, un élément `<slot />` affichera ses propres enfants.
 
 ```astro
 ---
