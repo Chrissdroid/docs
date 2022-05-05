@@ -12,7 +12,7 @@ export default NavDictionary({
 
 	// Core Concepts
 	coreConcepts: 'Concepts Principaux',
-	'core-concepts/partial-hydration': 'Partial Hydration',
+	'core-concepts/partial-hydration': 'Hydratation partielle',
 
 	// Basics
 	basics: 'Les Bases',
@@ -39,9 +39,8 @@ export default NavDictionary({
 	'core-concepts/framework-components': 'Composants de Frameworks',
 
 	// Reference
-	reference: 'Références',
-	// /!\ Links to the configuration reference are not yet available in other languages, ignoring instead. /!\
-	// 		'reference/configuration-reference': 'Configuration',
+	reference: 'Référence',
+	'reference/configuration-reference': 'Configuration',
 	'reference/cli-reference': 'Lignes de Commandes',
 	'reference/api-reference': 'API d\'Exécution',
 	'reference/integrations-reference': 'API d\'Intégration',
