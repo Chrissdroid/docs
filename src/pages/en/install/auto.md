@@ -1,6 +1,20 @@
 ---
-layout: ~/layouts/InstallLayout.astro
+title: Install Astro with the Automatic CLI
+description: How to install Astro with NPM, PNPM, or Yarn via the create-astro CLI tool.
+layout: ~/layouts/MainLayout.astro
+setup: import InstallGuideTabGroup from '~/components/TabGroup/InstallGuideTabGroup.astro';
 ---
+Ready to install Astro? Follow our automatic or manual set-up guide to get started.
+
+#### Prerequisites
+
+- **Node.js** - `14.15.0`, `v16.0.0`, or higher.
+- **Text editor** - We recommend [VS Code](https://code.visualstudio.com/) with our [Official Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
+- **Terminal** - Astro is accessed through its command-line interface (CLI).
+
+<InstallGuideTabGroup />
+
+#### Installation
 
 `create-astro` is the fastest, easiest way to start a new Astro project from scratch.
 
@@ -9,8 +23,14 @@ layout: ~/layouts/InstallLayout.astro
 Run the following command in your terminal to start our handy install wizard, `create-astro`. This will walk you through creating your very first Astro project in whichever directory you run it in.
 
 ```shell
-# Run the create-astro wizard right from npm:
-npm init astro
+# npm
+npm create astro@latest
+
+# yarn
+yarn create astro
+
+# pnpm
+pnpm create astro@latest
 ```
 
 If `create-astro` starts successfully, you will see a short list of starter templates to choose from: 

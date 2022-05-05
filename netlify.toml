@@ -6,10 +6,14 @@
     to = "/en/reference/integrations-reference"
 
   [[redirects]]
+    from = "/en/core-concepts/component-hydration"
+    to = "/en/core-concepts/partial-hydration"
+
+  [[redirects]]
     from = "/en/quick-start"
     to = "/en/installation"
 
   [[redirects]]
     from = "/:lang/*"
-    to = "/:lang/404.html"
+    to = "/:lang/404/"
     status = 404

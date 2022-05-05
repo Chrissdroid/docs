@@ -1,6 +1,20 @@
 ---
-layout: ~/layouts/InstallLayout.astro
+title: Install Astro manually
+description: How to install Astro manually with NPM, PNPM, or Yarn.
+layout: ~/layouts/MainLayout.astro
+setup: import InstallGuideTabGroup from '~/components/TabGroup/InstallGuideTabGroup.astro';
 ---
+Ready to install Astro? Follow our automatic or manual set-up guide to get started.
+
+#### Prerequisites
+
+- **Node.js** - `14.15.0`, `v16.0.0`, or higher.
+- **Text editor** - We recommend [VS Code](https://code.visualstudio.com/) with our [Official Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
+- **Terminal** - Astro is accessed through its command-line interface (CLI).
+
+<InstallGuideTabGroup />
+
+#### Installation
 
 If you prefer not to use our automatic `create-astro` CLI tool, you can set up your project yourself by following the guide below.
 
@@ -34,6 +48,7 @@ Then, replace any placeholder "scripts" section of your `package.json` with the 
   "scripts": \{
 -    "test": "echo \"Error: no test specified\" && exit 1"
 +    "dev": "astro dev",
++    "start": "astro dev",
 +    "build": "astro build",
 +    "preview": "astro preview"
   },
@@ -49,7 +64,7 @@ For this guide, copy-and-paste the following code snippet (including `---` dashe
 
 ```astro
 ---
-// Welcome to Astro! Everything between these "---" code fences
+// Welcome to Astro! Everything between these triple-dash code fences
 // is your "component front matter". It never runs in the browser.
 console.log('This runs in your terminal, not the browser!');
 ---

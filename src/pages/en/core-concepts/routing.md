@@ -63,7 +63,7 @@ Routes can be generated from multiple named parameters, at any level of the file
 - `pages/[username]/settings.astro` → (`/fred/settings`, `/drew/settings`, etc.)
 - `pages/[lang]-[version]/info.astro` → (`/en-v1/info`, `/fr-v2/info`, etc.)
 
-#### The `Astro.params` obect
+#### The `Astro.params` object
 
 Astro components that generate routes dynamically have acess to an `Astro.params` object for each route. This allows you to use those generated parts of the URL in your component script and template.
 
@@ -227,7 +227,7 @@ interface Page<T = any> {
 
 A more advanced use-case for pagination is **nested pagination.** This is when pagination is combined with other dynamic route params. You can use nested pagination to group your paginated collection by some property or tag.
 
-For example, if you want to group your paginated markdown posts by some tag, you would use nested pagination by creating a `/src/pages/[tag]/[page].astro` page that would match the following URLS:
+For example, if you want to group your paginated Markdown posts by some tag, you would use nested pagination by creating a `/src/pages/[tag]/[page].astro` page that would match the following URLS:
 
 - `/red/1` (tag=red)
 - `/red/2` (tag=red)
@@ -243,12 +243,12 @@ In the following example, we will implement nested pagination to build the URLs 
 // Example: /src/pages/[tag]/[page].astro
 export function getStaticPaths({paginate}) {
   const allTags = ['red', 'blue', 'green'];
-  const allPosts = Astro.fetchContent('../../posts/*.md');
+  const allPosts = await Astro.glob('../../posts/*.md');
   // For every tag, return a paginate() result.
   // Make sure that you pass `{params: {tag}}` to `paginate()`
   // so that Astro knows which tag grouping the result is for.
   return allTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) => post.tag === tag);
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tag === tag);
     return paginate(filteredPosts, {
       params: { tag },
       pageSize: 10
@@ -256,5 +256,5 @@ export function getStaticPaths({paginate}) {
   });
 }
 const { page } = Astro.props;
-const { params } = Astro.request;
+const params = Astro.params;
 ```

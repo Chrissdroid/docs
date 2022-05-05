@@ -205,6 +205,16 @@ Create a new `netlify.toml` file at the top level of your project repository wit
   publish = "dist"
 ```
 
+Using [`pnpm` on Netlify?](https://answers.netlify.com/t/using-pnpm-and-pnpm-workspaces/2759) Use the following settings instead:
+
+```toml
+[build.environment]
+  NPM_FLAGS = "--version" # prevent Netlify npm install
+[build]
+  command = 'npx pnpm i --store=node_modules/.pnpm-store && npm run build'
+  publish = 'dist'
+```
+
 Push the new `netlify.toml` file up to your hosted git repository. Then, set up a new project on [Netlify](https://netlify.com) for your git repository. Netlify will read this file and automatically configure your deployment.
 
 ### Netlify Website UI
@@ -389,7 +399,7 @@ Use the following build settings:
 - **Framework preset**: `Astro`
 - **Build command:** `npm run build`
 - **Build output directory:** `dist`
-- **Environment variables (advanced)**: Currently, Cloudflare Pages supports `NODE_VERSION = 12.18.0` in the Pages build environment by default. Astro requires `14.15.0`, `v16.0.0`, or higher. You can add an environment variable with the **Variable name** of `NODE_VERSION` and a **Value** of a [Node version that’s compatible with Astro](https://docs.astro.build/install#prerequisites) or by specifying the node version of your project in a `.nvmrc` or `.node-version` file.
+- **Environment variables (advanced)**: Currently, Cloudflare Pages supports `NODE_VERSION = 12.18.0` in the Pages build environment by default. Astro requires `14.15.0`, `v16.0.0`, or higher. You can add an environment variable with the **Variable name** of `NODE_VERSION` and a **Value** of a [Node version that’s compatible with Astro](/en/install/auto#prerequisites) or by specifying the node version of your project in a `.nvmrc` or `.node-version` file.
 
 Then click the **Save and Deploy** button.
 
@@ -433,19 +443,19 @@ If you don't have an existing Astro site, you can create one by running:
 
 ```bash
 # Make a new project directory, and navigate directly into it
-$ mkdir my-astro-project && cd $_
+mkdir my-astro-project && cd $_
 
 # prepare for liftoff...
-$ npm init astro
+npm create astro@latest
 
 # install dependencies
-$ npm install
+npm install
 
 # start developing!
-$ npm run dev
+npm run dev
 
 # when you're ready: build your static site to `dist/`
-$ npm run build
+npm run build
 ```
 
 ### Add Layer0

@@ -6,7 +6,7 @@ description: An intro to the .astro component syntax.
 
 **Astro components** are the basic building blocks of any Astro project. They are HTML-only templating components with no client-side runtime.
 
-Astro component syntax is a superset of HTML. The syntax was designed to feel familiar to anyone with experience writing HTML or JSX, and adds support for including components and JavaScript expressions. You can spot an Astro component by its file extension: `.astro`.
+Astro component syntax is a superset of HTML. The syntax was [designed to feel familiar to anyone with experience writing HTML or JSX](/en/comparing-astro-vs-other-tools/#astro-vs-jsx), and adds support for including components and JavaScript expressions. You can spot an Astro component by its file extension: `.astro`.
 
 Astro components are extremely flexible. Often, an Astro component will contain some **reusable UI on the page**, like a header or a profile card. At other times, an Astro component may contain a smaller snippet of HTML, like a collection of common `<meta>` tags that make SEO easy to work with. Astro components can even contain an entire page layout.
 
@@ -41,18 +41,20 @@ import Button from './Button.astro';
 
 ### The Component Script
 
-Astro uses a code fence (`---`) to identify the component script in your Astro component. If you've ever written Markdown before, you may already be familiar with a similar concept called *front matter.* Astro's idea of a component script was directly inspired by this concept.
+Astro uses a code fence (`---`) to identify the component script in your Astro component. If you've ever written Markdown before, you may already be familiar with a similar concept called *frontmatter.* Astro's idea of a component script was directly inspired by this concept.
 
 You can use the component script to write any JavaScript code that you need to render your template. This can include:
 
-- Importing other Astro components
+- Importing other Astro components 
 - Importing other framework components, like React
 - Importing data, like a JSON file
 - fetching content from an API or database
 - creating variables that you will reference in your template
 
+
 ```astro
 ---
+// Note: Imports must live at the top of your file.
 import SomeAstroComponent from '../components/SomeAstroComponent.astro';
 import SomeReactComponent from '../components/SomeReactComponent.jsx';
 import someData from '../data/pokemon.json';
@@ -75,7 +77,7 @@ Below the component script, sits the component template. The component template 
 
 If you write plain HTML here, your component will render that HTML in any Astro page it is imported and used.
 
-However, Astro's component template syntax also supports **JavaScript expressions**, **imported components** and **special Astro directives**. Data and values defined (at page build time) in the component script can be used in the component template to produce dynamically-created HTML.
+However, Astro's component template syntax also supports **JavaScript expressions**, **imported components** and [**special Astro directives**](/en/reference/directives-reference/). Data and values defined (at page build time) in the component script can be used in the component template to produce dynamically-created HTML.
 
 ```astro
 ---
@@ -97,6 +99,10 @@ const myFavoritePokemon = [/* ... */];
 <ul>
   {myFavoritePokemon.map((data) => <li>{data.name}</li>)}
 <ul>
+
+<!-- Use a template directive to inject an unescaped HTML string into an element: -->
+<p set:html={rawHTMLString} />
+
 
 
 ```
@@ -237,7 +243,7 @@ const { name } = Astro.props
 
 // src/components/Person.astro
 
-<Wrapper name = "Astro">
+<Wrapper name="Astro">
   <h2>I am a person.</h2>
   <p>Here is some stuff about me.</p>
 </Wrapper>
@@ -245,7 +251,7 @@ const { name } = Astro.props
 
 #### Named Slots
 
-Slots can also be **named**. Rather than a single `<slot>` element which renders _all_ children, named slots allow you to specify multiple places where children should be placed.
+Inside of an Astro component, slots can also be **named**. Rather than a single `<slot>` element which renders _all_ children, named slots allow you to specify multiple places where children should be placed.
 
 ```astro
 // src/components/Wrapper.astro
@@ -268,13 +274,13 @@ const { name } = Astro.props
 
 // src/components/Person.astro
 
-<Wrapper name = "Astro">
+<Wrapper name="Astro">
   <img src="https://my.photo/astro.jpg" slot="after-header">
   <h2>I am a person.</h2>
   <p slot="after-footer">Here is some stuff about me.</p>
 </Wrapper>
-
 ```
+
 #### Fallback Content for Slots
 Slots can also render **fallback content**. When there are no matching children passed to a `<slot>`, a `<slot>` element will render its own placeholder children.
 
@@ -322,20 +328,20 @@ They can be used to style your components, and all style rules are automatically
 
 ### Client-Side Scripts
 
-To send JavaScript to the browser without [using a framework component](/en/core-concepts/framework-components) (React, Svelte, Vue, Preact, SolidJS, AlpineJS, Lit...) you can use a `<script>` tag in your Astro component template and send JavaScript to the browser that executes in the global scope.
+To send JavaScript to the browser without [using a framework component](/en/core-concepts/framework-components) (React, Svelte, Vue, Preact, SolidJS, AlpineJS, Lit) or an [Astro integration](https://astro.build/integrations/) (e.g. astro-XElement), you can use a `<script>` tag in your Astro component template and send JavaScript to the browser that executes in the global scope.
 
 ```astro
 <script>
+  // Processed! Bundled! ESM imports work, even to npm packages.
+</script>
+
+<script is:inline>
   // Will be rendered into the HTML exactly as written!
   // ESM imports will not be resolved relative to the file.
 </script>
-
-<script hoist type="module">
-  // Processed! Bundled! ESM imports work, even to npm packages.
-</script>
 ```
 
-📚 See our [directives reference](/en/reference/directives-reference#script-and-style-tags) page for more information about the directives available  on `<script>` tags.
+📚 See our [directives reference](/en/reference/directives-reference#script--style-directives) page for more information about the directives available  on `<script>` tags.
 
 #### Loading External Scripts
 
@@ -345,7 +351,7 @@ Note that this approach skips the JavaScript processing, bundling and optimizati
 
 ```astro
 // absolute URL path
-<script src="/some-external-script.js"></script>
+<script is:inline src="/some-external-script.js"></script>
 ```
 #### Using Hoisted Scripts
 
@@ -355,7 +361,7 @@ Astro detects these JavaScript client-side imports and then builds, optimizes, a
 
 ```astro
 // ESM import
-<script hoist type="module">
+<script>
   import './some-external-script.js';
 </script>
 ```

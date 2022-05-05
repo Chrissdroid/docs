@@ -34,7 +34,7 @@ Astro supports several file formats for its JavaScript configuration file: `astr
 TypeScript config file loading is handled using [`tsm`](https://github.com/lukeed/tsm) and will respect your project tsconfig options.
 ## Config File Resolving
 
-Astro will automatically try to resolve a config file named `astro.config.mjs` inside [project root](/guide/#index-html-and-project-root). If no config file is found in your project root, Astro's default options will be used.
+Astro will automatically try to resolve a config file named `astro.config.mjs` inside project root. If no config file is found in your project root, Astro's default options will be used.
 
 ```bash
 # Example: Reads your configuration from ./astro.config.mjs
@@ -94,7 +94,7 @@ export default defineConfig({
 })
 ```
 
-To references a file or directory relative to the configuration file, use `import.meta.url` (unless you are writing a common.js `astro.config.cjs` file).
+To reference a file or directory relative to the configuration file, use `import.meta.url` (unless you are writing a common.js `astro.config.cjs` file).
 
 ```js
 export default defineConfig({

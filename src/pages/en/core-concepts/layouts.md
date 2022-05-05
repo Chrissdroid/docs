@@ -6,7 +6,7 @@ description: An intro to layouts, a type of Astro component that is shared betwe
 
 **Layouts** are a special type of [Astro component](/en/core-concepts/astro-components) useful for creating reusable page templates. 
 
-A layout component is conventionally used to provide an [`.astro` or `.md` page](/en/core-concepts/astro-pages) both a **page shell** (`<html>`, `<head>` and `<body>` tags) and a `<slot>` to specify where in the layout page content should be injected.
+A layout component is conventionally used to provide an [`.astro` or `.md` page](/en/core-concepts/astro-pages) both a **page shell** (`<html>`, `<head>` and `<body>` tags) and a `<slot />` to specify where in the layout page content should be injected.
 
 Layouts often provide common `<head>` elements and common UI elements for the page such as headers, navigation bars and footers.
 
@@ -46,7 +46,7 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 ```
 
 
-📚 Learn more about [slots](/en/guides/slots).
+📚 Learn more about [slots](/en/core-concepts/astro-components#slots).
 
 
 ## Nesting Layouts
@@ -70,7 +70,7 @@ const {content} = Astro.props;
 
 ## Markdown Layouts
 
-Page layouts are especially useful for [Markdown files.](#markdown-pages) Markdown files can use the special `layout` front matter property to specify a layout component that will wrap their Markdown content in a full page HTML document. 
+Page layouts are especially useful for [Markdown files.](/en/guides/markdown-content#markdown-pages) Markdown files can use the special `layout` front matter property to specify a layout component that will wrap their Markdown content in a full page HTML document. 
 
 When a Markdown page uses a layout, it passes the layout a single `content` prop that includes all of the Markdown front matter data and final HTML output.  See the `BlogPostLayout.astro` example above for an example of how you would use this `content` prop in your layout component.
 

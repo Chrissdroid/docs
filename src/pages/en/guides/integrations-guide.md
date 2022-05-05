@@ -18,7 +18,7 @@ title: Using Integrations
 
 ## Tutorial: Adding React to Your Project
 
-In this example, we will add the `@astrojs/react` integration to add React support to your Astro project. The process for adding any other framwork (Preact, Vue, Svelte or Solid.js) is almost identical and can be followed using the same steps outlined below.
+In this example, we will add the `@astrojs/react` integration to add React support to your Astro project. The process for adding any other framework (Preact, Vue, Svelte or Solid.js) is almost identical and can be followed using the same steps outlined below.
 
 <blockquote>
   <Badge variant="accent">Feeling adventurous?</Badge>
@@ -56,11 +56,11 @@ If you see an error on startup, make sure that you:
 - ✅ installed the required packages with npm
 - ✅ imported the integration into your `astro.config.mjs` file
 - ✅ called your integration as a function (`[react()]`, not `[react]`)
-- ✅ removed the deprecated `renderers:` configuration
+- ✅ removed any deprecated `renderers:` configuration (pre v0.25)
 
 ## Automatic Integration Setup
 
-Astro recent launched an **experimental** `astro add` command to automate the setup of integrations.
+Astro recently launched an **experimental** `astro add` command to automate the setup of integrations.
 
 > We will always ask for confirmation before updating any of your files, but it never hurts to have a version-controlled backup just in case.
 
@@ -88,7 +88,7 @@ pnpx astro add react tailwind partytown
 
 ## Handling Integration Dependencies
 
-When installing an Astro integration in your project, keep an eye out for any "missing peer dependencies" warnings that you see during the install step. Not all package managers will peer dependencies for you automatically. If you are an Node v16+ and using npm, you should not need to worry about this section.
+When installing an Astro integration in your project, keep an eye out for any "missing peer dependencies" warnings that you see during the install step. Not all package managers will install peer dependencies for you automatically. If you are on Node v16+ and using npm, you should not need to worry about this section.
 
 If you see a `"Cannot find package 'react'"` (or similar) warning when you start up Astro, that means that you need to install that package into your project.  React, for example, is a peer dependency of the `@astrojs/react` integration. That means that you should install the official `react` and `react-dom` packages alongside your integration. The integration will then pull from these packages automatically.
 
