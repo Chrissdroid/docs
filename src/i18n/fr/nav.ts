@@ -26,7 +26,11 @@ export default NavDictionary({
 	// Features
 	features: 'Fonctionnalités',
 	'guides/configuring-astro': 'Configurer Astro',
+<<<<<<< HEAD
 	'guides/styling': 'CSS et Stylisation',
+=======
+	'guides/styling': 'CSS et Styles',
+>>>>>>> 24e8683634aedc71023f00226ff5c024dd71aeaf
 	'guides/debugging': 'Déboguer',
 	'guides/data-fetching': 'Récupération de Données',
 	'guides/deploy': 'Déployer',
