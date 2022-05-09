@@ -9,7 +9,11 @@ description: Une intro basique à Astro.
 Générateur de sites statiques  🚀  Amenez votre propre Framework  🚀  Expédiez moins de JavaScript
 
 
+<<<<<<< HEAD
+> Vous avez un projet vieux projet dépoussiérer ? Suivez le [guide de migration](/fr/migrate) pour mettre à jour vers la version beta 1.0 !
+=======
 > Vous avez un ancien projet à dépoussiérer ? Le [guide de migration](/fr/migrate) vous permettra de le mettre à jour vers la version beta 1.0 !
+>>>>>>> 24e8683634aedc71023f00226ff5c024dd71aeaf
 
 
 ## Essayez Astro
