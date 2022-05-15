@@ -2,6 +2,7 @@
 layout: ~/layouts/MainLayout.astro
 title: Routing
 description: An intro to routing with Astro.
+i18nReady: true
 ---
 
 Astro uses **file-based routing** to generate your build URLs based on the file layout of your project `src/pages/` directory. When a file is added to the `src/pages` directory of your project, it is automatically available as a route based on its filename.
@@ -55,7 +56,7 @@ export function getStaticPaths() {
 ---
 ```
 
-📚 Learn more about [`getStaticPaths()`](/en/reference/api-reference#getstaticpaths).
+📚 Learn more about [`getStaticPaths()`](/en/reference/api-reference/#getstaticpaths).
 
 Routes can be generated from multiple named parameters, at any level of the filepath:
 
